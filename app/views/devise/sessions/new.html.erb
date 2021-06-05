@@ -1,20 +1,35 @@
-<h2>Log in</h2>
+<div class="mx-auto col-md-6 card-box">
+    <div class="card">
+        <div class="card-header mx-auto">
+            <strong>Please log into your account</strong>
+        </div>
 
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: false,
-                autofocus: true,
-                input_html: { autocomplete: "email" } %>
-    <%= f.input :password,
-                required: false,
-                input_html: { autocomplete: "current-password" } %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-  </div>
+        <div class="card-body">
+            <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+              <%= render 'devise/shared/messages' %>
+              <div class="form-item form-group">
+                <%= f.label :email %><br />
+                <%= f.email_field :email, autofocus: true, class: "form-control" %>
+              </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
-  </div>
-<% end %>
+              <div class="form-item form-group">
+                <%= f.label :password %><br/>
+                <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+              </div> 
 
-<%= render "devise/shared/links" %>
+              <% if devise_mapping.rememberable? -%>
+              <div class="form-group">
+                  <%= f.check_box :remember_me %>
+                  <%= f.label :remember_me %>
+              </div></br>
+              <% end -%>
+
+              <div class="button actions">
+                <%= f.submit "Login", class: "btn" %>
+              </div>
+            <% end %>
+
+            <%= render "devise/shared/links" %>
+        </div>
+    </div>
+</div>

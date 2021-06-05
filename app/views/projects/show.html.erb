@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @project.user_id %>
+</p>
+
+<p>
+  <strong>Project number:</strong>
+  <%= @project.project_number %>
+</p>
+
+<p>
+  <strong>Project name:</strong>
+  <%= @project.project_name %>
+</p>
+
+<p>
+  <strong>Client name:</strong>
+  <%= @project.client_name %>
+</p>
+
+<p>
+  <strong>Document title:</strong>
+  <%= @project.document_title %>
+</p>
+
+<p>
+  <strong>Document number:</strong>
+  <%= @project.document_number %>
+</p>
+
+<p>
+  <strong>Revision number:</strong>
+  <%= @project.revision_number %>
+</p>
+
+<p>
+  <strong>Client reference:</strong>
+  <%= @project.client_reference %>
+</p>
+
+<p>
+  <strong>Revision date:</strong>
+  <%= @project.revision_date %>
+</p>
+
+<p>
+  <strong>Project manager:</strong>
+  <%= @project.project_manager %>
+</p>
+
+<p>
+  <strong>Prepared by:</strong>
+  <%= @project.prepared_by %>
+</p>
+
+<p>
+  <strong>Approved by:</strong>
+  <%= @project.approved_by %>
+</p>
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>

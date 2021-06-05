@@ -13,6 +13,32 @@ import '@fortawesome/fontawesome-free/css/all';
 
 import "../stylesheets/application";
 
+require("jquery")
+require("@nathanvda/cocoon")
+
+document.addEventListener("turbolinks:load", () => {
+  // eslint-disable-next-line no-undef
+  $('[data-toggle="tooltip"]'.tooltip())
+})
+
+
+console.log('Hello from application.js')
+
+//select element function
+// const selectElement = function (element) {
+//   return document.getElementById(element);
+// }
+
+// let menuToggler = selectElement('menu-toggle');
+// let body = selectElement('body');
+
+// console.log(menuToggler)
+// console.log(body)
+
+// menuToggler.addEventListener('turbolinks:click', function () {
+//   body.classList.toggle('open');
+// });
+
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()

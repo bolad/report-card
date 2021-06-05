@@ -1,0 +1,26 @@
+@import "~bootstrap/scss/bootstrap";
+@import '@fortawesome/fontawesome-free';
+
+body {
+  padding-bottom: 20px;
+}
+
+.navbar {
+  margin-bottom: 30px;
+  background-color: #262626;
+}
+
+.navbar-nav {
+  margin-left: 5rem;
+}
+
+.hamburger {
+  margin-right: 5rem;
+}
+
+.logo {
+  width: 15%;
+  padding-left: 5rem;
+}
+
+

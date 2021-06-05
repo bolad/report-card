@@ -1,0 +1,56 @@
+@import '~bootstrap/scss/bootstrap';
+@import '@fortawesome/fontawesome-free';
+
+.button {
+  width: 25%;
+}
+
+.btn {
+  background-color: #fff;
+  font-size: 2rem;
+  color: #212529;
+  width: 60%;
+
+  &:hover {
+    background-color: #f2f2f2;
+  }
+}
+
+.form-item {
+  padding-bottom: 2rem;
+}
+
+.card {
+  background-color: #212529;
+}
+.card-body {
+  padding: 5rem;
+  background-color: #212529;
+  color: #fff;
+}
+
+.card-header {
+  background-color: #212529;
+  color: #fff;
+  border: none;
+  padding-top: 3rem;
+}
+
+.card-box {
+  width: 50%;
+  height: 20vh;
+}
+
+.form-control {
+  height: 40px;
+  font-size: 90%;
+}
+
+.link-text {
+  text-decoration: none;
+
+  &:hover {
+    color: #e4d4d4;
+    background-color: inherit;
+  }
+}
