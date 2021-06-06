@@ -10,8 +10,9 @@ import "channels"
 
 import "bootstrap";
 import '@fortawesome/fontawesome-free/css/all';
-
 import "../stylesheets/application";
+
+global.toastr = require("toastr");
 
 require("jquery")
 require("@nathanvda/cocoon")
