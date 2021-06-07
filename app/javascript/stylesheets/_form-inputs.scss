@@ -2,22 +2,19 @@
 @import '@fortawesome/fontawesome-free';
 @import 'variables';
 
-.button {
-  width: 25%;
-}
-
 .btn {
   background-color: #fff;
   font-size: inherit;
   color: #212529;
-  width: 65%;
+  padding: .7rem 1.5rem;
+
 
   &:hover {
     background-color: #f2f2f2;
   }
 }
 
-.btn-form {
+.btn-inverse {
   background-color: #212529;
   color: #fff;
 
@@ -27,9 +24,27 @@
   }
 }
 
-
 .form-item {
   padding-bottom: 2rem;
+}
+
+.form-field {
+  padding-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-label {
+  padding-top: 1rem;
+}
+
+.form-input {
+  width: 70%;
+  height: 3.5rem;
+}
+
+.description {
+  height: 10rem;
 }
 
 .card {
@@ -73,4 +88,16 @@
   margin-right:10rem;
   padding-top: 2rem;
   padding-bottom: 3rem;
+}
+
+.navi-btn {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 2rem;
+}
+
+.heading {
+  padding-bottom: 5rem;
+  margin: auto;
+  text-align: center;
 }
