@@ -1,0 +1,83 @@
+
+<%= form_with(model: report) do |form| %>
+  <% if report.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(report.errors.count, "error") %> prohibited this report from being saved:</h2>
+
+      <ul>
+        <% report.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :project_name %>
+    <%= form.text_field :project_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :project_number %>
+    <%= form.text_field :project_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :document_title %>
+    <%= form.text_field :document_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :document_number %>
+    <%= form.text_field :document_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :document_status %>
+    <%= form.text_field :document_status %>
+  </div>
+
+  <div class="field">
+    <%= form.label :date %>
+    <%= form.text_field :date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :client_name %>
+    <%= form.text_field :client_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :client_number %>
+    <%= form.text_field :client_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :project_manager %>
+    <%= form.text_field :project_manager %>
+  </div>
+
+  <div class="field">
+    <%= form.label :checked_by %>
+    <%= form.text_field :checked_by %>
+  </div>
+
+  <div class="field">
+    <%= form.label :approved_by %>
+    <%= form.text_field :approved_by %>
+  </div>
+
+  <div class="field">
+    <%= form.label :revision_number %>
+    <%= form.text_field :revision_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

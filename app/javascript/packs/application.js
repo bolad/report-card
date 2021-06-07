@@ -17,11 +17,6 @@ global.toastr = require("toastr");
 require("jquery")
 require("@nathanvda/cocoon")
 
-document.addEventListener("turbolinks:load", () => {
-  // eslint-disable-next-line no-undef
-  $('[data-toggle="tooltip"]'.tooltip())
-})
-
 
 console.log('Hello from application.js')
 

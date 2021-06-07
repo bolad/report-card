@@ -1,5 +1,6 @@
 @import '~bootstrap/scss/bootstrap';
 @import '@fortawesome/fontawesome-free';
+@import 'variables';
 
 .button {
   width: 25%;
@@ -7,14 +8,25 @@
 
 .btn {
   background-color: #fff;
-  font-size: 2rem;
+  font-size: inherit;
   color: #212529;
-  width: 60%;
+  width: 65%;
 
   &:hover {
     background-color: #f2f2f2;
   }
 }
+
+.btn-form {
+  background-color: #212529;
+  color: #fff;
+
+  &:hover {
+    background-color: #363738;
+    color: #fff;
+  }
+}
+
 
 .form-item {
   padding-bottom: 2rem;
@@ -48,9 +60,17 @@
 
 .link-text {
   text-decoration: none;
+  color:  var(--body-font-color);
 
   &:hover {
     color: #e4d4d4;
     background-color: inherit;
   }
+}
+
+.form-container {
+  margin-left: 10rem;
+  margin-right:10rem;
+  padding-top: 2rem;
+  padding-bottom: 3rem;
 }
