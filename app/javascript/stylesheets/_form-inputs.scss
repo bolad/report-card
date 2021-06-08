@@ -15,7 +15,7 @@
 }
 
 .btn-inverse {
-  background-color: #212529;
+  background-color: var(--dark-color);
   color: #fff;
 
   &:hover {
@@ -90,14 +90,25 @@
   padding-bottom: 3rem;
 }
 
-.navi-btn {
-  display: flex;
-  justify-content: space-between;
-  padding-top: 2rem;
+.nav-right {
+  float: right;
 }
 
 .heading {
+  display: flex;
+  justify-content: center;
   padding-bottom: 5rem;
   margin: auto;
   text-align: center;
 }
+
+.progress {
+  font-family: inherit;
+  font-size: 18px;
+  padding-right: 5rem;
+  height: 3rem;
+  background-color: inherit;
+  text-align: center;
+  line-height: 1.3;
+}
+
