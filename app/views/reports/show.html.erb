@@ -1,68 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Project name:</strong>
-  <%= @report.project_name %>
+  <strong>Project information:</strong>
+  <%= @report.project_information %>
 </p>
 
 <p>
-  <strong>Project number:</strong>
-  <%= @report.project_number %>
-</p>
-
-<p>
-  <strong>Document title:</strong>
-  <%= @report.document_title %>
-</p>
-
-<p>
-  <strong>Document number:</strong>
-  <%= @report.document_number %>
-</p>
-
-<p>
-  <strong>Document status:</strong>
-  <%= @report.document_status %>
-</p>
-
-<p>
-  <strong>Date:</strong>
-  <%= @report.date %>
-</p>
-
-<p>
-  <strong>Client name:</strong>
-  <%= @report.client_name %>
-</p>
-
-<p>
-  <strong>Client number:</strong>
-  <%= @report.client_number %>
-</p>
-
-<p>
-  <strong>Project manager:</strong>
-  <%= @report.project_manager %>
-</p>
-
-<p>
-  <strong>Checked by:</strong>
-  <%= @report.checked_by %>
-</p>
-
-<p>
-  <strong>Approved by:</strong>
-  <%= @report.approved_by %>
-</p>
-
-<p>
-  <strong>Revision number:</strong>
-  <%= @report.revision_number %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @report.description %>
+  <strong>Executive summary:</strong>
+  <%= @report.executive_summary %>
 </p>
 
 <%= link_to 'Edit', edit_report_path(@report) %> |
