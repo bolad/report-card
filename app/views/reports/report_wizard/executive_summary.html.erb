@@ -3,17 +3,22 @@
     <div class="progress-bar" style="width: <%= @progress %>%"></div>
   </div>
   <div class="heading">
-    <div class="steps">
+    <div class="steps-completed">
       <%= wizard_steps.index(step) + 1 %>/
       <%= wizard_steps.count %>
     </div>
-    <div>
-      <h2 class="head-large">Project Information</h2>
-    </div>
+    <h2 class="head-large">Executive Summary</h2>
   </div>
+
+  <%= @report.executive_summary %>
 
   <hr style="height: .1rem; background-color: #262626; width:100%;">
   
+    <div class="actions nav-left">
+      <%= link_to previous_wizard_path, class: "btn btn-inverse" do %>
+        <div><i class="fas fa-angle-double-left"></i></i></div>
+      <% end %>
+    </div>
     <div class="actions nav-right">
       <%= link_to next_wizard_path, class: "btn btn-inverse" do %>
         <div><i class="fas fa-angle-double-right"></i></i></div>

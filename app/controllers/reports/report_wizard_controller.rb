@@ -1,10 +1,11 @@
-class ReportCreatorController < ApplicationController
+class Reports::ReportWizardController < ApplicationController
   include Wicked::Wizard
   before_action :set_progress, only: [:show]
 
   steps :project_information, :executive_summary
 
   def show
+    @report = Report.find(params[:report_id])
     # case step
     # when :find_friends
     #   @friends = @user.find_friends
@@ -13,7 +14,8 @@ class ReportCreatorController < ApplicationController
   end
 
   def finish_wizard_path
-    root_path
+    @report = Report.find(params[:report_id])
+    report_path(@report)
   end
 
   private 
