@@ -5,7 +5,6 @@ class ReportCreatorController < ApplicationController
   steps :project_information, :executive_summary
 
   def show
-    # @user = current_user
     # case step
     # when :find_friends
     #   @friends = @user.find_friends
