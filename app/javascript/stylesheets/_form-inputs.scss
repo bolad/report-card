@@ -94,15 +94,20 @@
   float: right;
 }
 
+.nav-left {
+  float: left;
+}
+
 .heading {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   padding-bottom: 5rem;
+  padding-top: 3rem;
   margin: auto;
   text-align: center;
 }
 
-.progress {
+.steps {
   font-family: inherit;
   font-size: 18px;
   padding-right: 5rem;
@@ -111,4 +116,5 @@
   text-align: center;
   line-height: 1.3;
 }
+
 

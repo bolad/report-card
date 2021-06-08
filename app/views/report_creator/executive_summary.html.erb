@@ -1,12 +1,25 @@
 <div class="form-container">
+  <div class="progress">
+    <div class="progress-bar" style="width: <%= @progress %>%"></div>
+  </div>
   <div class="heading">
+    <div class="steps-completed">
+      <%= wizard_steps.index(step) + 1 %>/
+      <%= wizard_steps.count %>
+    </div>
     <h2 class="head-large">Executive Summary</h2>
   </div>
 
-  <%= link_to previous_wizard_path, class: "btn btn-sm btn-info" do %>
-    <div class="fa fa-arrow-left">Previous</div>
-  <% end %>
-  <%= link_to next_wizard_path, class: "btn btn-sm btn-info" do %>
-    <div class="fa fa-arrow-right">Next</div>
-  <% end %>
+  <hr style="height: .1rem; background-color: #262626; width:100%;">
+  
+    <div class="actions nav-left">
+      <%= link_to previous_wizard_path, class: "btn btn-inverse" do %>
+        <div><i class="fas fa-angle-double-left"></i></i></div>
+      <% end %>
+    </div>
+    <div class="actions nav-right">
+      <%= link_to next_wizard_path, class: "btn btn-inverse" do %>
+        <div><i class="fas fa-angle-double-right"></i></i></div>
+      <% end %>
+    </div>
 </div>
