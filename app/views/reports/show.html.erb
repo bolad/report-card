@@ -5,6 +5,8 @@
   <%= @report.executive_summary %>
 </p>
 
+<%= link_to "create wizard", report_report_wizard_index_path(@report) %>
+
 <p>Available information</p>
 <%= @report.project_information.project_manager %>
 <%= link_to 'Edit', edit_report_path(@report) %> |
