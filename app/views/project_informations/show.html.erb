@@ -16,11 +16,6 @@
 </p>
 
 <p>
-  <strong>Document number:</strong>
-  <%= @project_information.document_number %>
-</p>
-
-<p>
   <strong>Document status:</strong>
   <%= @project_information.document_status %>
 </p>
@@ -48,6 +43,11 @@
 <p>
   <strong>Author:</strong>
   <%= @project_information.author %>
+</p>
+
+<p>
+  <strong>Report:</strong>
+  <%= @project_information.report_id %>
 </p>
 
 <%= link_to 'Edit', edit_project_information_path(@project_information) %> |

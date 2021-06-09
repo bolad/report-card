@@ -18,12 +18,12 @@ class ProjectInformationsTest < ApplicationSystemTestCase
     fill_in "Client name", with: @project_information.client_name
     fill_in "Client number", with: @project_information.client_number
     fill_in "Date", with: @project_information.date
-    fill_in "Document number", with: @project_information.document_number
     fill_in "Document status", with: @project_information.document_status
     fill_in "Document title", with: @project_information.document_title
     fill_in "Project manager", with: @project_information.project_manager
     fill_in "Project name", with: @project_information.project_name
     fill_in "Project number", with: @project_information.project_number
+    fill_in "Report", with: @project_information.report_id
     click_on "Create Project information"
 
     assert_text "Project information was successfully created"
@@ -38,12 +38,12 @@ class ProjectInformationsTest < ApplicationSystemTestCase
     fill_in "Client name", with: @project_information.client_name
     fill_in "Client number", with: @project_information.client_number
     fill_in "Date", with: @project_information.date
-    fill_in "Document number", with: @project_information.document_number
     fill_in "Document status", with: @project_information.document_status
     fill_in "Document title", with: @project_information.document_title
     fill_in "Project manager", with: @project_information.project_manager
     fill_in "Project name", with: @project_information.project_name
     fill_in "Project number", with: @project_information.project_number
+    fill_in "Report", with: @project_information.report_id
     click_on "Update Project information"
 
     assert_text "Project information was successfully updated"

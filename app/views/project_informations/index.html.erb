@@ -8,13 +8,13 @@
       <th>Project name</th>
       <th>Project number</th>
       <th>Document title</th>
-      <th>Document number</th>
       <th>Document status</th>
       <th>Date</th>
       <th>Client name</th>
       <th>Client number</th>
       <th>Project manager</th>
       <th>Author</th>
+      <th>Report</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -25,13 +25,13 @@
         <td><%= project_information.project_name %></td>
         <td><%= project_information.project_number %></td>
         <td><%= project_information.document_title %></td>
-        <td><%= project_information.document_number %></td>
         <td><%= project_information.document_status %></td>
         <td><%= project_information.date %></td>
         <td><%= project_information.client_name %></td>
         <td><%= project_information.client_number %></td>
         <td><%= project_information.project_manager %></td>
         <td><%= project_information.author %></td>
+        <td><%= project_information.report_id %></td>
         <td><%= link_to 'Show', project_information %></td>
         <td><%= link_to 'Edit', edit_project_information_path(project_information) %></td>
         <td><%= link_to 'Destroy', project_information, method: :delete, data: { confirm: 'Are you sure?' } %></td>

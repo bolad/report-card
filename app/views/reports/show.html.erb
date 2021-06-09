@@ -5,5 +5,7 @@
   <%= @report.executive_summary %>
 </p>
 
+<p>Available information</p>
+<%= @report.project_information.project_manager %>
 <%= link_to 'Edit', edit_report_path(@report) %> |
 <%= link_to 'Back', reports_path %>

@@ -4,22 +4,22 @@ one:
   project_name: MyString
   project_number: MyString
   document_title: MyString
-  document_number: MyString
   document_status: MyString
   date: MyString
   client_name: MyString
   client_number: MyString
   project_manager: MyString
   author: MyString
+  report: one
 
 two:
   project_name: MyString
   project_number: MyString
   document_title: MyString
-  document_number: MyString
   document_status: MyString
   date: MyString
   client_name: MyString
   client_number: MyString
   project_manager: MyString
   author: MyString
+  report: two

@@ -17,7 +17,7 @@ class ProjectInformationsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create project_information" do
     assert_difference('ProjectInformation.count') do
-      post project_informations_url, params: { project_information: { author: @project_information.author, client_name: @project_information.client_name, client_number: @project_information.client_number, date: @project_information.date, document_number: @project_information.document_number, document_status: @project_information.document_status, document_title: @project_information.document_title, project_manager: @project_information.project_manager, project_name: @project_information.project_name, project_number: @project_information.project_number } }
+      post project_informations_url, params: { project_information: { author: @project_information.author, client_name: @project_information.client_name, client_number: @project_information.client_number, date: @project_information.date, document_status: @project_information.document_status, document_title: @project_information.document_title, project_manager: @project_information.project_manager, project_name: @project_information.project_name, project_number: @project_information.project_number, report_id: @project_information.report_id } }
     end
 
     assert_redirected_to project_information_url(ProjectInformation.last)
@@ -34,7 +34,7 @@ class ProjectInformationsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update project_information" do
-    patch project_information_url(@project_information), params: { project_information: { author: @project_information.author, client_name: @project_information.client_name, client_number: @project_information.client_number, date: @project_information.date, document_number: @project_information.document_number, document_status: @project_information.document_status, document_title: @project_information.document_title, project_manager: @project_information.project_manager, project_name: @project_information.project_name, project_number: @project_information.project_number } }
+    patch project_information_url(@project_information), params: { project_information: { author: @project_information.author, client_name: @project_information.client_name, client_number: @project_information.client_number, date: @project_information.date, document_status: @project_information.document_status, document_title: @project_information.document_title, project_manager: @project_information.project_manager, project_name: @project_information.project_name, project_number: @project_information.project_number, report_id: @project_information.report_id } }
     assert_redirected_to project_information_url(@project_information)
   end
 

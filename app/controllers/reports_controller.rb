@@ -64,6 +64,6 @@ class ReportsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def report_params
-      params.require(:report).permit(:executive_summary)
+      params.require(:report).permit(:executive_summary, project_informations_attributes: [:id, :project_name, :project_number, :document_title, :document_number, :document_status, :date, :client_name, :client_number, :project_manager, :author])
     end
 end
