@@ -43,8 +43,13 @@
   height: 3.5rem;
 }
 
-.description {
+.description-sm {
   height: 10rem;
+}
+
+.description-lg {
+  height: 25rem;
+  width: 70%;
 }
 
 .card {
@@ -87,7 +92,7 @@
   margin-left: 10rem;
   margin-right:10rem;
   padding-top: 2rem;
-  padding-bottom: 3rem;
+  margin-bottom: 10rem;
 }
 
 .nav-right {
