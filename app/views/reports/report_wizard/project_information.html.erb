@@ -1,22 +1,8 @@
 <div class= "form-container">
-  <div class="progress">
-    <div class="bar" style="width: <%= @progress %>%"></div>
-  </div>
-  <div class="heading">
-    <div class="steps">
-      <%= wizard_steps.index(step) + 1 %>/
-      <%= wizard_steps.count %>
-    </div>
-    <h2 class="head-large">Project Information</h2>
-  </div>
-
-  <%= @report.project_information.project_manager %>
-
-  <hr style="height: .1rem; background-color: #262626; width:100%;">
-  
-  <%= link_to next_wizard_path do %>
-    <div class="btn btn-inverse nav-right">
-      <div><i class="fas fa-angle-double-right "></i></div>
-    </div>
+  <%= form_for @report, url: report_report_wizard_path, method: :put do |f| %>
+    <%= render 'reports/form' %>
+ 
   <% end %>
+  <%= render 'navigation_fields' %>
 </div>
+

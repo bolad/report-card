@@ -17,6 +17,7 @@ class ProjectInformationsController < ApplicationController
 
   # GET /project_informations/1/edit
   def edit
+    @report = Report.find(params[:report_id])
   end
 
   # POST /project_informations or /project_informations.json
