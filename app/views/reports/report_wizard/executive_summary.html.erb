@@ -10,7 +10,28 @@
     <h2 class="head-large">Executive Summary</h2>
   </div>
 
-  <%= @report.executive_summary %>
+  <%= form_for @report, url:report_report_wizard_path, method: :put do |form| %>
+    <% if @report.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@report.errors.count, "error") %> prohibited this report from being saved:</h2>
+  
+        <ul>
+          <% @report.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  
+    <div class="field">
+      <%= form.label :executive_summary %>
+      <%= form.text_field :executive_summary %>
+    </div>
+  
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+  <% end %>
 
   <hr style="height: .1rem; background-color: #262626; width:100%;">
   
