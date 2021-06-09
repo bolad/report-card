@@ -1,16 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Project information:</strong>
-  <%= @report.project_information %>
-</p>
-
-<p>
   <strong>Executive summary:</strong>
   <%= @report.executive_summary %>
 </p>
-
-<%= link_to "Create Report", report_report_wizard_index_path(@report) %>
 
 <%= link_to 'Edit', edit_report_path(@report) %> |
 <%= link_to 'Back', reports_path %>

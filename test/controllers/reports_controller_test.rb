@@ -17,7 +17,7 @@ class ReportsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create report" do
     assert_difference('Report.count') do
-      post reports_url, params: { report: { executive_summary: @report.executive_summary, project_information: @report.project_information } }
+      post reports_url, params: { report: { executive_summary: @report.executive_summary } }
     end
 
     assert_redirected_to report_url(Report.last)
@@ -34,7 +34,7 @@ class ReportsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update report" do
-    patch report_url(@report), params: { report: { executive_summary: @report.executive_summary, project_information: @report.project_information } }
+    patch report_url(@report), params: { report: { executive_summary: @report.executive_summary } }
     assert_redirected_to report_url(@report)
   end
 

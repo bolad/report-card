@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :project_informations
+  resources :reports
   resources :reports do
     resources :report_wizard, controller: 'reports/report_wizard'
   end

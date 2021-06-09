@@ -15,7 +15,6 @@ class ReportsTest < ApplicationSystemTestCase
     click_on "New Report"
 
     fill_in "Executive summary", with: @report.executive_summary
-    fill_in "Project information", with: @report.project_information
     click_on "Create Report"
 
     assert_text "Report was successfully created"
@@ -27,7 +26,6 @@ class ReportsTest < ApplicationSystemTestCase
     click_on "Edit", match: :first
 
     fill_in "Executive summary", with: @report.executive_summary
-    fill_in "Project information", with: @report.project_information
     click_on "Update Report"
 
     assert_text "Report was successfully updated"
