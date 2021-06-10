@@ -3,24 +3,45 @@ class Reports::ReportWizardController < ApplicationController
   before_action :set_progress, only: [:show, :update]
   before_action :set_report, only: [:show, :update, :finish_wizard_path]
 
-  steps :project_information, :executive_summary
+  steps :project_information, :executive_summary, :project_background, :project_objective, :proposed_developments, :catchment_details, :data_assessment, :conclusion
 
   def show
     case step
-    when :project_information
-      #@project_information.update(project_information_params)
-    when :executive_summary
+      when :project_information
+      when :executive_summary
+      when :project_background
+      when :project_objective
+      when :proposed_developments
+      when :catchment_details
+      when :data_assessment
+      when :conclusion
     end
     render_wizard
   end
 
   def update
-    #@project_information = @report.project_information.id
     case step
     when :project_information
-      @report.project_information.update(project_information_params)
-      #@project_information.update(project_information_params)
+      @report.update(report_params)
     when :executive_summary
+      @report.update(report_params)
+    end
+    when :executive_summary
+      @report.update(report_params)
+    end
+    when :project_background
+      @report.update(report_params)
+    end
+    when :project_objective
+      @report.update(report_params)
+    end
+    when :proposed_developments
+      @report.update(report_params)
+    end
+    when :catchment_details
+      @report.update(report_params)
+    end
+    when :data_assessment
       @report.update(report_params)
     end
     render_wizard @report
@@ -45,11 +66,7 @@ class Reports::ReportWizardController < ApplicationController
   end
 
   def report_params
-    params.require(:report).permit(:executive_summary, project_informations_attributes: [:id, :project_name, :project_number, :document_title, :document_number, :document_status, :date, :client_name, :client_number, :project_manager, :author])
-  end
-
-  def project_information_params
-    params.permit(:project_name, :project_number, :document_title, :document_status, :date, :client_name, :client_number, :project_manager, :author, :report_id)
+    params.require(:report).permit(:project_name, :project_number, :document_title, :document_number, :document_status, :date, :client_name, :client_number, :project_manager, :author, :checked_by, :description, :executive_summary, :project_background, :project_objective, :proposed_developments, :catchment_details, :data_assessment, :conclusion)
   end
 
 end

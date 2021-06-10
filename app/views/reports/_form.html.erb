@@ -10,12 +10,6 @@
         </ul>
       </div>
     <% end %>
-    
-    <div class="field">
-      <%= form.fields_for :project_informations do |f| %>
-        <%= render 'project_information_fields', f: f %>
-      <% end %>
-    </div>
 
     <div class="field">
       <%= form.label :executive_summary %>
