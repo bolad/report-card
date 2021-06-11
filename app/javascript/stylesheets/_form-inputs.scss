@@ -97,10 +97,14 @@
 
 .nav-right {
   float: right;
+  padding-right: 3.5rem;
+  padding-left: 3.5rem;
 }
 
 .nav-left {
   float: left;
+  padding-right: 3.5rem;
+  padding-left: 3.5rem;
 }
 
 .heading {
@@ -122,7 +126,7 @@
   line-height: 1.3;
 }
 
-.progress-bar {
-  color: var(--dark-color);
+.bar {
+  background-color: var(--dark-color);
 }
 
