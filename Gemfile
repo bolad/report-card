@@ -59,3 +59,4 @@ gem 'devise'
 gem 'cocoon'
 gem 'pry'
 gem 'wicked'
+gem "pundit"

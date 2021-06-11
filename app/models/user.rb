@@ -9,4 +9,10 @@ class User < ApplicationRecord
   def username
     self.email.split(/@/).first
   end
+
+  def to_s
+    email
+  end
+
+  has_many :reports
 end
