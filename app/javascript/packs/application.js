@@ -38,3 +38,6 @@ console.log('Hello from application.js')
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+require("trix")
+require("@rails/actiontext")

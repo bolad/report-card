@@ -6,8 +6,8 @@
   </div>
 
   <%= form_for @report, url: report_report_wizard_path, method: :put do |f| %>
-    <div class="field form-field">
-      <%= f.text_area :executive_summary, class: "text-area"%>
+    <div class="field">
+      <%= f.rich_text_area :executive_summary, class: "text-area"%>
     </div>
     <div class="btn btn-inverse">
       <%= f.submit "Save Changes" , style: "background-color: #262626; border: none; color: #fff;"%>
