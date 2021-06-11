@@ -4,8 +4,18 @@
     <%= render 'steps' %>
     <h2 class="head-large">Executive Summary</h2>
   </div>
+
+  <%= form_for @report, url: report_report_wizard_path, method: :put do |f| %>
+    <div class="field form-field">
+      <%= f.text_area :executive_summary, class: "text-area"%>
+    </div>
+    <div class="btn btn-inverse">
+      <%= f.submit "Save Changes" , style: "background-color: #262626; border: none; color: #fff;"%>
+    </div>
+  <% end %>
   
-  <%= link_to edit_report_path(@report) do %>
+  <hr style="height: .1rem; background-color: #262626; width:100%;">
+  <%= link_to edit_report_report_wizard_path(@report) do %>
     <div class="btn btn-inverse nav-left">
       <div><i class="fas fa-angle-double-left "></i></div>
     </div>

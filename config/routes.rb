@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :reports do
+  resources :reports, except: [:edit] do
     resources :report_wizard, controller: 'reports/report_wizard'
   end
   devise_for :users

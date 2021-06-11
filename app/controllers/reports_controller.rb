@@ -1,25 +1,20 @@
 class ReportsController < ApplicationController
   before_action :set_report, only: %i[ show edit update destroy ]
 
-  # GET /reports or /reports.json
   def index
     @reports = Report.all
   end
 
-  # GET /reports/1 or /reports/1.json
   def show
   end
 
-  # GET /reports/new
   def new
     @report = Report.new
   end
 
-  # GET /reports/1/edit
-  def edit
-  end
+  # def edit
+  # end
 
-  # POST /reports or /reports.json
   def create
     @report = Report.new(report_params)
 
@@ -33,18 +28,17 @@ class ReportsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /reports/1 or /reports/1.json
-  def update
-    respond_to do |format|
-      if @report.update(report_params)
-        format.html { redirect_to report_report_wizard_index_path(@report), notice: "Report was successfully updated." }
-        format.json { render :show, status: :ok, location: @report }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @report.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+  # def update
+  #   respond_to do |format|
+  #     if @report.update(report_params)
+  #       format.html { redirect_to report_report_wizard_index_path(@report), notice: "Report was successfully updated." }
+  #       format.json { render :show, status: :ok, location: @report }
+  #     else
+  #       format.html { render :edit, status: :unprocessable_entity }
+  #       format.json { render json: @report.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
 
   # DELETE /reports/1 or /reports/1.json
   def destroy
