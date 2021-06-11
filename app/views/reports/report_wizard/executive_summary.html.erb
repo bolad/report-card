@@ -1,27 +1,9 @@
 <div class= "form-container">
-  <div class="progress">
-    <div class="bar" style="width: <%= @progress %>%"></div>
-  </div>
-    
+  <%= render 'progress' %>
   <div class="heading">
-    <div class="steps">
-      <%= wizard_steps.index(step) + 1 %>/
-      <%= wizard_steps.count %>
-    </div>
+    <%= render 'steps' %>
     <h2 class="head-large">Executive Summary</h2>
   </div>
-
-  <hr style="height: .1rem; background-color: #262626; width:100%;">
   
-  <%= link_to previous_wizard_path do %>
-    <div class="btn btn-inverse nav-left">
-      <div><i class="fas fa-angle-double-left "></i></div>
-    </div>
-  <% end %>
-
-  <%= link_to next_wizard_path do %>
-    <div class="btn btn-inverse nav-right">
-      <div><i class="fas fa-angle-double-right "></i></div>
-    </div>
-  <% end %>
+  <%= render 'navigation_fields' %>
 </div>

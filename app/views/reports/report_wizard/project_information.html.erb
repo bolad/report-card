@@ -1,8 +1,54 @@
 <div class= "form-container">
-  <%= form_for @report, url: report_report_wizard_path, method: :put do |f| %>
-    <%= render 'reports/form' %>
- 
+  <%= render 'progress' %>
+  <div class="heading">
+    <%= render 'steps' %>
+    <h2 class="head-large">Project Information</h2>
+  </div>
+
+  <% form_for @report, url: wizard_path do |f| %>
+    <div class="field form-field">
+      <%= f.label :project_name, class: "head-small form-label" %>
+      <%= f.text_field :project_name, class: "form-input" %>
+    </div>
+<div class="field form-field">
+  <%= f.label :project_number, class: "head-small form-label" %>
+  <%= f.text_field :project_number, class: "form-input" %>
+</div>
+<div class="field form-field">
+  <%= f.label :document_title, class: "head-small form-label" %>
+  <%= f.text_field :document_title, class: "form-input" %>
+</div>
+<div class="field form-field">
+  <%= f.label :document_status, class: "head-small form-label" %>
+  <%= f.text_field :document_status, class: "form-input" %>
+</div>
+<div class="field form-field">
+  <%= f.label :date, class: "head-small form-label" %>
+  <%= f.text_field :date, class: "form-input" %>
+</div>
+<div class="field form-field">
+  <%= f.label :client_name, class: "head-small form-label" %>
+  <%= f.text_field :client_name, class: "form-input" %>
+</div>
+<div class="field form-field">
+  <%= f.label :client_number, class: "head-small form-label" %>
+  <%= f.text_field :client_number, class: "form-input" %>
+</div>
+<div class="field form-field">
+  <%= f.label :project_manager, class: "head-small form-label" %>
+  <%= f.text_field :project_manager, class: "form-input" %>
+</div>
+<div class="field form-field">
+  <%= f.label :author, class: "head-small form-label" %>
+  <%= f.text_field :author, class: "form-input" %>
+</div>
   <% end %>
-  <%= render 'navigation_fields' %>
+
+  <hr style="height: .1rem; background-color: #262626; width:100%;">
+  <%= link_to next_wizard_path do %>
+    <div class="btn btn-inverse nav-right">
+      <div><i class="fas fa-angle-double-right "></i></div>
+    </div>
+  <% end %>
 </div>
 
