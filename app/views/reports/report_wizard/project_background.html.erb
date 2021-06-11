@@ -5,6 +5,9 @@
     <h2 class="head-large">Project Background</h2>
   </div>
 
+  <%= render layout: 'text_area' do |f| %>
+    <%= f.rich_text_area :project_background, class: "text-area" %>
+  <% end %>
   
   <%= render 'navigation_fields' %>
 </div>

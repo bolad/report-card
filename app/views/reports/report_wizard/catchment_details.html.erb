@@ -5,6 +5,9 @@
     <h2 class="head-large">Catchment Details</h2>
   </div>
 
+  <%= render layout: 'text_area' do |f| %>
+    <%= f.rich_text_area :catchment_details, class: "text-area" %>
+  <% end %>
   
   <%= render 'navigation_fields' %>
 </div>
