@@ -60,3 +60,4 @@ gem 'cocoon'
 gem 'pry'
 gem 'wicked'
 gem "pundit"
+gem 'ransack'

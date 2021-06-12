@@ -134,3 +134,21 @@
   width: 100%;
   height: 30rem;
 }
+
+.btn-reserved {
+  background-color: #262626; 
+  border: none; 
+  text-decoration: none; 
+  color: #fff;
+  padding: .3rem 1rem;
+
+  &:hover {
+    background-color: #363738;
+  }
+}
+
+.search-input {
+  height: 3rem;
+  width: auto;
+  padding-right: 1rem;
+}

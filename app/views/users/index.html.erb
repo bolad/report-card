@@ -1,7 +1,63 @@
-<div class="form-container">
-  <div class="card-columns">
-    <% @users.each do |user| %>
-      <%= render 'users/user', user: user %>
+<div class="container">
+  <div class="form-inline">
+    <%= search_form_for @q do |f| %>
+      <%= f.search_field :email_cont, placeholder: 'email', class: "search-input" %>
+      <%= f.submit class: "btn-reserved" %>
     <% end %>
+    <div class="ml-2" style="padding-top: 1rem;">
+      <%= link_to users_path, class: "btn btn-sm btn-inverse" do %>
+        <i class="fa fa-sync"></i>
+      <% end %>
+    </div>
   </div>
+  <br/>
+  <div class="table responsive">
+  <table class="table table-bordered table-striped table-sm">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>
+          <%= sort_link(@q, :email, "Email Address")  %>
+        </th>
+        <th>Signed Up</th>
+        <th>
+          <%= 'sign_in_count'.humanize  %>
+        </th>
+     
+        <th>
+          Last Signed In
+        </th>
+       
+        <th>Roles</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td>
+            <%= "#{user.first_name} #{user.last_name}" %>
+          </td>
+          <td>
+            <%= user.email %>
+          </td>
+          <td>
+            <%= user.created_at %>
+          </td>
+          <td>
+            <%= user.sign_in_count %>
+          </td>
+       
+          <td>
+            <%= user.last_sign_in_at %>
+          </td>
+         
+          <td>
+            
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  </div>
+  <br/>
 </div>
