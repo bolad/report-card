@@ -6,14 +6,9 @@
   </div>
 
   <%= render layout: 'text_area' do |f| %>
-    <%= f.rich_text_area :conclusion, class: "text-area" %>
+    <%= f.rich_text_area :executive_summary, class: "text-area" %>
   <% end %>
-  
-  <hr style="height: .1rem; background-color: #262626; width:100%;">
-  
-  <%= link_to next_wizard_path do %>
-    <div class="btn btn-inverse nav-right">
-      <div><i class="fas fa-angle-double-right"></i></div>
-    </div>
-  <% end %>
+
+  <%= render 'navigation_fields' %>
+
 </div>

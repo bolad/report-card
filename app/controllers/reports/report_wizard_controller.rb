@@ -3,10 +3,11 @@ class Reports::ReportWizardController < ApplicationController
   before_action :set_progress, only: [:show, :update]
   before_action :set_report, only: [:show, :update, :finish_wizard_path]
 
-  steps :executive_summary, :project_background, :project_objective, :proposed_developments, :catchment_details, :data_assessment, :conclusion
+  steps :project_information, :executive_summary, :project_background, :project_objective, :proposed_developments, :catchment_details, :data_assessment, :conclusion
 
   def show
       case step
+      when :project_information
       when :executive_summary
       when :project_background
       when :project_objective
@@ -20,6 +21,8 @@ class Reports::ReportWizardController < ApplicationController
 
   def update
     case step
+    when :project_information
+      @report.update(report_params)
     when :executive_summary
       @report.update(report_params)
     when :executive_summary
