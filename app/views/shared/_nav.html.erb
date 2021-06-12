@@ -54,7 +54,13 @@
             </li>
           <% else %>
             <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">My Reports</a>
+              <%= link_to 'My Reports', reports_path, class: "nav-link active" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to 'All Reports', reports_path, class: "nav-link active" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to 'All Users', users_path, class: "nav-link active" %>
             </li>
             <li class="nav-item">
               <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "nav-link active" %>
