@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :trackable
 
-  #has_many :projects
+  has_many :reports
 
   def username
     self.email.split(/@/).first
@@ -13,6 +13,16 @@ class User < ApplicationRecord
   def to_s
     email
   end
+
+
+  def first_name
+    self.username.split('.').first
+  end
+
+  def last_name
+    self.username.split('.').last
+  end
+
 
   has_many :reports
 end
