@@ -12,14 +12,20 @@
     <% end %>
 
     <div class="heading">
-      <h2 class="head-small">Project Name</h2>
+      <h2 class="head-large">Project Name</h2>
     </div>
 
     <div class="field form-field">
-      <%= f.text_field :project_name, class: "form-input", placeholder: "Please enter project name here", style: "width: 100%;" %>
+      <%= f.text_field :project_name, class: "form-input", placeholder: "e.g. AMP7 Development Impact Assessment Batch 4", style: "width: 100%;" %>
     </div>
     
     <hr style="height: .1rem; background-color: #262626; width:100%;">
+
+    <%= link_to root_path do %>
+      <div class="btn btn-inverse nav-left">
+        Cancel
+      </div>
+    <% end %>  
 
     <%= button_tag type: 'submit', class: "btn btn-inverse nav-right", id: "creat-button" do %>
       <i class="fas fa-angle-double-right"></i>
