@@ -6,7 +6,7 @@
   background-color: #fff;
   font-size: inherit;
   color: #212529;
-  padding: .7rem 1.5rem;
+  padding: .7rem .7rem;
 
 
   &:hover {
@@ -143,7 +143,7 @@
   border: none; 
   text-decoration: none; 
   color: #fff;
-  padding: .3rem 1rem;
+  padding: .3rem .5rem;
 
   &:hover {
     background-color: #363738;
@@ -173,4 +173,29 @@
 
 .text-container {
   padding-bottom: 2rem;
+}
+
+.rows-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.row-buttons {
+  padding-top: 2rem;
+  padding-bottom: 5rem;
+}
+
+.nav-field {
+  padding-top: 5rem;
+}
+
+.delete-row {
+  text-decoration: none;
+  color: #000;
+
+  &:hover {
+    background-color: #fff;
+    width: 12%;
+    color: inherit;
+  }
 }

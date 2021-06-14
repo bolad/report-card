@@ -3,11 +3,9 @@
 
   <%= @report.project_name %>
   <%= @report.executive_summary %>
-  <%= @report.project_objective %>
-  <%= @report.project_background %>
-  <%= @report.user.email %>
+  <%= @report.executive_summary %>
 
-<%= link_to "create another report", report_report_wizard_index_path(@report) %>
+<%= link_to "update report", report_report_wizard_index_path(@report) %>
 
 <%= link_to 'Edit', report_report_wizard_index_path(@report) %> |
 <%= link_to 'Back', reports_path %>

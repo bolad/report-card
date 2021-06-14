@@ -5,23 +5,31 @@
     <h2 class="head-large">Executive Summary</h2>
   </div>
 
-  <%= render layout: 'text_area' do |f| %>
+  <%= form_for @report, url: report_report_wizard_path, method: :put do |f| %>
     <div class="text-container">
       <%= f.rich_text_area :executive_summary, class: "form-control text-area" %>
     </div>
+
     <div>
       <%= f.fields_for :executives do |executive_form| %>
-        <%= render 'executive_fields', f: executive_form %>
+        <div class="rows-container">
+          <%= render 'executive_fields', f: executive_form %>
+        </div>
       <% end %>
     </div>
-    </br>
-
-    <div class="btn btn-inverse">
-      <%= link_to_add_association 'Add new row to executive summary table', f, :executives, style: "background-color: #262626; border: none; color: #fff;" %>
-    </div>
+    
+    <div class="row-buttons">
+      <div class="btn btn-inverse nav-right">
+        <%= link_to_add_association 'Add Table Row', f, :executives, style: "background-color: #262626; border: none; color: #fff;" %>
+      </div>
+      <div class="btn btn-inverse nav-left">
+        <%= f.submit "Save Changes" , style: "background-color: #262626; border: none; color: #fff;"%>
+      </div>
+    <div>
     
   <% end %>
-
-  <%= render 'navigation_fields' %>
+  <div class="nav-field">
+    <%= render 'navigation_fields' %>
+  </div>
 
 </div>
