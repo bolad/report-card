@@ -7,6 +7,12 @@
 
   <%= render layout: 'text_area' do |f| %>
     <%= f.rich_text_area :executive_summary, class: "form-control text-area" %>
+    <%= f.fields_for :executives do |executive_form| %>
+      <%= render 'executive_fields', f: executive_form %>
+    <% end %>
+    <div>
+      <%= link_to_add_association 'Add new row', f, :executives %>
+    </div>
   <% end %>
 
   <%= render 'navigation_fields' %>

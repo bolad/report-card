@@ -9,6 +9,7 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
 import "bootstrap";
+//import 'cocoon-js'
 import '@fortawesome/fontawesome-free/css/all';
 import "../stylesheets/application";
 
