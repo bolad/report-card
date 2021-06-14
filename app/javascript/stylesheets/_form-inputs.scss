@@ -155,3 +155,22 @@
   width: auto;
   padding-right: 1rem;
 }
+
+.hidden-field {
+ padding: 2rem 5rem 2rem 5rem;
+}
+
+.form-btn-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.hidden-container {
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+  border: 1px solid black;
+}
+
+.text-container {
+  padding-bottom: 2rem;
+}

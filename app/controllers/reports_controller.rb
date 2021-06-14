@@ -62,6 +62,6 @@ class ReportsController < ApplicationController
       params.require(:report).permit(:project_name, :project_number, :document_title, :document_number, :document_status, :date, 
                                     :client_name, :client_number, :project_manager, :author, :checked_by, :description, :executive_summary, 
                                     :project_background, :project_objective, :proposed_developments, :catchment_details, :data_assessment, :conclusion, 
-                                    executives_attributes: [:project_name, :project_number, :impact, :date])
+                                    executives_attributes: [:project_name, :project_number, :potential_impact, :date])
     end
 end
