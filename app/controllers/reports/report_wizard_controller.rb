@@ -65,4 +65,5 @@ class Reports::ReportWizardController < ApplicationController
                                   :project_background, :project_objective, :proposed_developments, :catchment_details, :data_assessment, :conclusion, 
                                   executives_attributes: [:id, :project_name, :project_number, :potential_impact, :date, :_destroy])
   end
+
 end

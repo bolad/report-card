@@ -1,11 +1,37 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <p id="notice"><%= notice %></p>
 
 
-  <%= @report.project_name %>
-  <%= @report.executive_summary %>
-  <%= @report.executive_summary %>
+    <%= @report.project_name %>
+    <%= @report.executive_summary %>
+  
+      <div class="project-table">
+            <table>
+              <thead>
+                <tr>
+                  <td>Project Name</td>
+                  <td>Jacobs Project Number</td>
+                  <td>Potential Impact</td>
+                  <td>Date</td>
+                </tr>
+              </thead>
+              <tbody>
+                <% @report.executives.each do |executive| %>
+                <tr>
+                  <td><%= executive.project_name %></td>
+                  <td><%= executive.project_number %></td>
+                  <td><%= executive.potential_impact %></td>
+                  <td><%= executive.date %></td>
+                </tr>   
+                <% end %>             
+              </tbody>
+            </table>
+          </div><br/>
+      
+   
 
-<%= link_to "update report", report_report_wizard_index_path(@report) %>
+  <%= link_to "update report", report_report_wizard_index_path(@report) %>
 
-<%= link_to 'Edit', report_report_wizard_index_path(@report) %> |
-<%= link_to 'Back', reports_path %>
+  <%= link_to 'Edit', report_report_wizard_index_path(@report) %> |
+  <%= link_to 'Back', reports_path %>
+</div>

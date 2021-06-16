@@ -4,7 +4,7 @@ class Report < ApplicationRecord
   validates :project_name, presence: true
   accepts_nested_attributes_for :executives,
                                 allow_destroy: true,
-                                reject_if: lambda {|attrs| attrs['project_name', 'project_number', 'potential_impact', 'date'].blank? }
+                                reject_if: :all_blank, allow_destroy: true
 
   has_rich_text :executive_summary
   has_rich_text :project_background

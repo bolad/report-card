@@ -2,12 +2,12 @@
 @import '@fortawesome/fontawesome-free';
 @import 'variables';
 
+//BUTTONS
 .btn {
   background-color: #fff;
   font-size: inherit;
   color: #212529;
   padding: .7rem .7rem;
-
 
   &:hover {
     background-color: #f2f2f2;
@@ -23,6 +23,47 @@
     color: #fff;
   }
 }
+
+.nav-right {
+  float: right;
+  padding-right: 3.5rem;
+  padding-left: 3.5rem;
+}
+
+.nav-left {
+  float: left;
+  padding-right: 3.5rem;
+  padding-left: 3.5rem;
+}
+
+.delete-row {
+  text-decoration: none;
+  color: #000;
+
+  &:hover {
+    background-color: #fff;
+    width: 12%;
+    color: inherit;
+  }
+}
+
+.row-buttons {
+  padding-top: 2rem;
+  padding-bottom: 5rem;
+}
+
+.btn-reserved {
+  background-color: #262626; 
+  border: none; 
+  text-decoration: none; 
+  color: #fff;
+  padding: .7rem 1rem;
+
+  &:hover {
+    background-color: #363738;
+  }
+}
+
 
 .form-item {
   padding-bottom: 2rem;
@@ -95,18 +136,6 @@
   margin-bottom: 5rem;
 }
 
-.nav-right {
-  float: right;
-  padding-right: 3.5rem;
-  padding-left: 3.5rem;
-}
-
-.nav-left {
-  float: left;
-  padding-right: 3.5rem;
-  padding-left: 3.5rem;
-}
-
 .heading {
   display: flex;
   justify-content: space-around;
@@ -138,18 +167,6 @@
   overflow-x: auto;
 }
 
-.btn-reserved {
-  background-color: #262626; 
-  border: none; 
-  text-decoration: none; 
-  color: #fff;
-  padding: .3rem .5rem;
-
-  &:hover {
-    background-color: #363738;
-  }
-}
-
 .search-input {
   height: 3rem;
   width: auto;
@@ -168,7 +185,6 @@
 .hidden-container {
   padding-bottom: 2rem;
   padding-top: 2rem;
-  border: 1px solid black;
 }
 
 .text-container {
@@ -180,22 +196,8 @@
   flex-direction: column;
 }
 
-.row-buttons {
-  padding-top: 2rem;
-  padding-bottom: 5rem;
-}
-
 .nav-field {
   padding-top: 5rem;
 }
 
-.delete-row {
-  text-decoration: none;
-  color: #000;
 
-  &:hover {
-    background-color: #fff;
-    width: 12%;
-    color: inherit;
-  }
-}
