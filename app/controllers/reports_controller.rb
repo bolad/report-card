@@ -8,7 +8,7 @@ class ReportsController < ApplicationController
   end
 
   def show
-  
+    @page_title = @report.document_title
   end
 
   def new
