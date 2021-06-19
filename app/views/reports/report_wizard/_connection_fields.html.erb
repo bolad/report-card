@@ -1,0 +1,45 @@
+<div class="hidden-container nested-fields shadow rounded">
+  <div class="form-group hidden-field">
+    <label class: "head-small">Development</label>
+    <%= f.text_field :development, class: 'form-control' %>
+  </div>
+  <div class="form-group hidden-field">
+    <label class: "head-small">DWF(l/s)</label>
+    <%= f.text_field :dwf, class: 'form-control' %>
+  </div>
+  <div class="form-group hidden-field">
+    <label class: "head-small">30-Year(l/s)</label>
+    <%= f.text_field :thirty_year, class: 'form-control' %>
+  </div>
+  <div class="form-group hidden-field">
+    <label class: "head-small">Node Ref.(l/s)</label>
+    <%= f.text_field :node_ref, class: 'form-control' %>
+  </div>
+  <div class="form-group hidden-field">
+    <label class: "head-small">Freeboard(m)(l/s)</label>
+    <%= f.text_field :freeboard, class: 'form-control' %>
+  </div>
+  <div class="form-group hidden-field">
+    <label class: "head-small">Receiving Sewer Dia.(mm)(l/s)</label>
+    <%= f.text_field :receiving_sewer, class: 'form-control' %>
+  </div>
+  <div class="form-group hidden-field">
+    <label class: "head-small">PFC(l/s)</label>
+    <%= f.text_field :pfc, class: 'form-control' %>
+  </div>
+  <div class="form-group hidden-field">
+    <label class: "head-small">Pipe RPA(l/s)</label>
+    <%= f.text_field :pipe, class: 'form-control' %>
+  </div>
+  <div class="form-group hidden-field">
+    <label class: "head-small">M30 Peak Flow(l/s)</label>
+    <%= f.text_field :peak_flow, class: 'form-control' %>
+  </div>
+  <div class="form-group hidden-field">
+    <label class: "head-small">Pumped/Gravity(l/s)</label>
+    <%= f.text_field :pumped, class: 'form-control' %>
+  </div>
+  <div class="form-group hidden-field">
+    <%= link_to_remove_association 'Delete Row', f, class: "delete-row" %>
+  </div>
+</div></br>

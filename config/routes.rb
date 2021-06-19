@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :connections
   resources :flows
   resources :backgrounds
   resources :reports, except: [:edit] do

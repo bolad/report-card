@@ -3,6 +3,8 @@ class Report < ApplicationRecord
   has_many :executives
   has_many :backgrounds
   has_many :flows
+  has_many :connections
+
   validates :project_name, presence: true
   accepts_nested_attributes_for :executives,
                                 allow_destroy: true,
@@ -13,6 +15,10 @@ class Report < ApplicationRecord
                                 reject_if: :all_blank, allow_destroy: true
 
   accepts_nested_attributes_for :flows,
+                                allow_destroy: true,
+                                reject_if: :all_blank, allow_destroy: true
+
+  accepts_nested_attributes_for :connections,
                                 allow_destroy: true,
                                 reject_if: :all_blank, allow_destroy: true
 

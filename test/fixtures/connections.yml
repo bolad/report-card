@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  development: MyString
+  dwf: MyString
+  thirty_year: MyString
+  node_ref: MyString
+  freeboard: MyString
+  receiving_sewer: MyString
+  pfc: MyString
+  pipe: MyString
+  peak_flow: MyString
+  pumped: MyString
+  report: one
+
+two:
+  development: MyString
+  dwf: MyString
+  thirty_year: MyString
+  node_ref: MyString
+  freeboard: MyString
+  receiving_sewer: MyString
+  pfc: MyString
+  pipe: MyString
+  peak_flow: MyString
+  pumped: MyString
+  report: two

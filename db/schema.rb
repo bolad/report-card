@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_19_223219) do
+ActiveRecord::Schema.define(version: 2021_06_19_233022) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,6 +62,23 @@ ActiveRecord::Schema.define(version: 2021_06_19_223219) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["report_id"], name: "index_backgrounds_on_report_id"
+  end
+
+  create_table "connections", force: :cascade do |t|
+    t.string "development"
+    t.string "dwf"
+    t.string "thirty_year"
+    t.string "node_ref"
+    t.string "freeboard"
+    t.string "receiving_sewer"
+    t.string "pfc"
+    t.string "pipe"
+    t.string "peak_flow"
+    t.string "pumped"
+    t.bigint "report_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["report_id"], name: "index_connections_on_report_id"
   end
 
   create_table "executives", force: :cascade do |t|
@@ -132,6 +149,7 @@ ActiveRecord::Schema.define(version: 2021_06_19_223219) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "backgrounds", "reports"
+  add_foreign_key "connections", "reports"
   add_foreign_key "executives", "reports"
   add_foreign_key "flows", "reports"
   add_foreign_key "reports", "users"
