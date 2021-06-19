@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_19_212336) do
+ActiveRecord::Schema.define(version: 2021_06_19_223219) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -75,6 +75,16 @@ ActiveRecord::Schema.define(version: 2021_06_19_212336) do
     t.index ["report_id"], name: "index_executives_on_report_id"
   end
 
+  create_table "flows", force: :cascade do |t|
+    t.string "flow_modelled"
+    t.string "include"
+    t.string "comments"
+    t.bigint "report_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["report_id"], name: "index_flows_on_report_id"
+  end
+
   create_table "reports", force: :cascade do |t|
     t.string "project_name"
     t.string "project_number"
@@ -123,5 +133,6 @@ ActiveRecord::Schema.define(version: 2021_06_19_212336) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "backgrounds", "reports"
   add_foreign_key "executives", "reports"
+  add_foreign_key "flows", "reports"
   add_foreign_key "reports", "users"
 end

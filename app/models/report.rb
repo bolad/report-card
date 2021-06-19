@@ -2,12 +2,17 @@ class Report < ApplicationRecord
   belongs_to :user
   has_many :executives
   has_many :backgrounds
+  has_many :flows
   validates :project_name, presence: true
   accepts_nested_attributes_for :executives,
                                 allow_destroy: true,
                                 reject_if: :all_blank, allow_destroy: true
 
   accepts_nested_attributes_for :backgrounds,
+                                allow_destroy: true,
+                                reject_if: :all_blank, allow_destroy: true
+
+  accepts_nested_attributes_for :flows,
                                 allow_destroy: true,
                                 reject_if: :all_blank, allow_destroy: true
 

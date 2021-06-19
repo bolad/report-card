@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :flows
   resources :backgrounds
   resources :reports, except: [:edit] do
     resources :report_wizard, controller: 'reports/report_wizard'

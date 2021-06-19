@@ -64,6 +64,7 @@ class ReportsController < ApplicationController
                                     :client_name, :client_number, :project_manager, :author, :checked_by, :description, :executive_summary, 
                                     :project_background, :project_objective, :proposed_developments, :catchment_details, :data_assessment, :conclusion, 
                                     executives_attributes: [:id, :project_name, :project_number, :potential_impact, :date, :_destroy], 
-                                    backgrounds_attributes: [:id, :site_name, :location, :property_count, :site_type])
+                                    backgrounds_attributes: [:id, :site_name, :location, :property_count, :site_type]),
+                                    flows_attributes: [:id, :flow_modelled, :include, :comments])
     end
 end

@@ -5,9 +5,37 @@
     <h2 class="head-large">Proposed New Developments</h2>
   </div>
 
-  <%= render layout: 'text_area' do |f| %>
-    <%= f.rich_text_area :proposed_developments, class: "text-area" %>
+  <%= form_for @report, url: report_report_wizard_path, method: :put do |f| %>
+    <div class="text-container">
+      <%= f.rich_text_area :proposed_developments, class: "form-control text-area" %>
+    </div>
+
+    <div>
+      <%= f.fields_for :flows do |flow_form| %>
+        <div class="rows-container">
+          <%= render 'flow_fields', f: flows %>
+        </div>
+      <% end %>
+    </div>
+    
+    <div class="row-buttons">
+      <div>
+        <%= link_to_add_association 'Add Row To Flows Table', f, :flows, class: "btn-reserved", style: "background-color: #262626; border: none; color: #fff; float: right;" %>
+      </div>
+    <div></br></br>
+    <div class="row-buttons">
+      <div>
+        <%= link_to_add_association 'Add Row To Connections Table', f, :flows, class: "btn-reserved", style: "background-color: #262626; border: none; color: #fff; float: right;" %>
+        <div>
+          <%= f.submit "Save Changes" , class: "btn-reserved", style: "background-color: #262626; border: none; color: #fff; float: left;"%>
+        </div>
+      </div>
+    <div>
+
   <% end %>
-  
-  <%= render 'navigation_fields' %>
+
+  <div class="nav-field">
+    <%= render 'navigation_fields' %>
+  </div>
+
 </div>
