@@ -18,24 +18,6 @@ global.toastr = require("toastr");
 require("jquery")
 require("@nathanvda/cocoon")
 
-
-console.log('Hello from application.js')
-
-//select element function
-// const selectElement = function (element) {
-//   return document.getElementById(element);
-// }
-
-// let menuToggler = selectElement('menu-toggle');
-// let body = selectElement('body');
-
-// console.log(menuToggler)
-// console.log(body)
-
-// menuToggler.addEventListener('turbolinks:click', function () {
-//   body.classList.toggle('open');
-// });
-
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
