@@ -66,6 +66,8 @@ class ReportsController < ApplicationController
                                     executives_attributes: [:id, :project_name, :project_number, :potential_impact, :date, :_destroy], 
                                     backgrounds_attributes: [:id, :site_name, :location, :property_count, :site_type],
                                     flows_attributes: [:id, :flow_modelled, :include, :comments],
-                                    connections_attributes: [:id, :development, :dwf, :thirty_year, :node_ref, :freeboard, :receiving_sewer, :pfc, :pipe, :peak_flow, :pumped])
+                                    connections_attributes: [:id, :development, :dwf, :thirty_year, :node_ref, :freeboard, :receiving_sewer, :pfc, :pipe, :peak_flow, :pumped],
+                                    incidents_attributes: [:id, :location, :postcode, :ngr, :hfrr, :historical_flooding, :wirs, :nearest_node, :modelled_risk, :comments]
+                                    )
     end
 end

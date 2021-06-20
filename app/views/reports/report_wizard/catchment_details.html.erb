@@ -5,9 +5,40 @@
     <h2 class="head-large">Catchment Details</h2>
   </div>
 
-  <%= render layout: 'text_area' do |f| %>
-    <%= f.rich_text_area :catchment_details, class: "text-area" %>
+  <%= form_for @report, url: report_report_wizard_path, method: :put do |f| %>
+    <div class="text-container">
+      <label class="head-small" style="text-align: center;">Flooding Locations And Incidents</label></br>
+      <%= f.rich_text_area :flooding_locations, class: "form-control text-area-sm" %>
+    </div>
+
+    <div>
+      <%= f.fields_for :incidents do |incident_form| %>
+        <div class="rows-container">
+          <%= render 'incident_fields', f: incidents %>
+        </div>
+      <% end %>
+    </div>
+
+    
+    <div class="row-buttons">
+      <div>
+        <%= link_to_add_association 'Add Row To Incidents Table', f, :incidents, class: "btn-reserved", style: "background-color: #262626; border: none; color: #fff; float: right;" %>
+      </div>
+    <div></br></br>
+
+    <div class="row-buttons">
+      <div>
+        <%= link_to_add_association 'Add Row To Cellars Table', f, :incidents, class: "btn-reserved", style: "background-color: #262626; border: none; color: #fff; float: right;" %>
+        <div>
+          <%= f.submit "Save Changes" , class: "btn-reserved", style: "background-color: #262626; border: none; color: #fff; float: left;"%>
+        </div>
+      </div>
+    <div>
+
   <% end %>
-  
-  <%= render 'navigation_fields' %>
+
+  <div class="nav-field">
+    <%= render 'navigation_fields' %>
+  </div>
+
 </div>
