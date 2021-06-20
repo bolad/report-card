@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  location: MyString
+  postcode: MyString
+  ngr: MyString
+  hfrr: MyString
+  historical_flooding: MyString
+  wirs: MyString
+  nearest_node: MyString
+  modelled_risk: MyString
+  comments: MyString
+  report: one
+
+two:
+  location: MyString
+  postcode: MyString
+  ngr: MyString
+  hfrr: MyString
+  historical_flooding: MyString
+  wirs: MyString
+  nearest_node: MyString
+  modelled_risk: MyString
+  comments: MyString
+  report: two
