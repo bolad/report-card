@@ -38,7 +38,8 @@ class Reports::ReportWizardController < ApplicationController
     when :data_assessment
       @report.update(report_params)
     end
-    render_wizard @report
+    redirect_to request.referrer
+    #render_wizard @report
   end
 
   def finish_wizard_path

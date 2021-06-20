@@ -1,0 +1,61 @@
+<div class="hidden-container nested-fields shadow rounded">
+  <div class="form-group hidden-field">
+    <label class="head-small">CSO Name (CS0 Ref)</label>
+    <%= f.text_field :cso_name, class: 'form-control' %>
+  </div>
+  <div class="form-group hidden-field">
+    <label class="head-small">Permit</label>
+    <%= f.text_field :permit, class: 'form-control' %>
+  </div>
+  <div class="form-group hidden-field">
+    <label class="head-small">Model</label>
+    <%= f.text_field :model, class: 'form-control' %>
+  </div>
+  <div class="form-group hidden-field">
+    <label class="head-small">EDM Annual Spill Frequency</label>
+    <%= f.text_field :edm_annual_spill_freq, class: 'form-control' %>
+  </div>
+  <div class="form-group hidden-field">
+    <label class="head-small">EDM Annual Spill Duration (hrs)</label>
+    <%= f.text_field :edm_bathing_spill_duration, class: 'form-control' %>
+  </div>
+  <div class="form-group hidden-field">
+    <label class="head-small">EDM Bathing Season Spill Frequency</label>
+    <%= f.text_field :edm_bathing_spill_freq, class: 'form-control' %>
+  </div>
+  <div class="form-group hidden-field">
+    <label class="head-small">EDM Bathing Season Spill Duration(hrs)</label>
+    <%= f.text_field :edm_bathing_spill_duration, class: 'form-control' %>
+  </div>
+  <div class="form-group hidden-field">
+    <label class="head-small">Model Annual Spill Frequency</label>
+    <%= f.text_field :model_annual_spill_freq, class: 'form-control' %>
+  </div>
+  <div class="form-group hidden-field">
+    <label class="head-small">Model Annual Spill Duration (hrs)</label>
+    <%= f.text_field :model_annual_spill_duration, class: 'form-control' %>
+  </div>
+  <div class="form-group hidden-field">
+    <label class="head-small">Model Annual Spill Volume (m3)</label>
+    <%= f.text_field :model_annual_spill_volume, class: 'form-control' %>
+  </div>
+  <div class="form-group hidden-field">
+    <label class="head-small">Model Bathing Season Spill Frequency</label>
+    <%= f.text_field :model_bathing_spill_freq, class: 'form-control' %>
+  </div>
+  <div class="form-group hidden-field">
+    <label class="head-small">Model Bathing Season Spill Duration (hrs)</label>
+    <%= f.text_field :model_bathing_spill_duration, class: 'form-control' %>
+  </div>
+  <div class="form-group hidden-field">
+    <label class="head-small">Model Bathing Season Spill Volume</label>
+    <%= f.text_field :model_bathing_spill_volume, class: 'form-control' %>
+  </div>
+  <div class="form-group hidden-field">
+    <label class="head-small">Comments</label>
+    <%= f.text_field :comments, class: 'form-control' %>
+  </div>
+  <div class="form-group hidden-field">
+    <%= link_to_remove_association 'Delete Row', f, class: "delete-row" %>
+  </div>
+</div></br>

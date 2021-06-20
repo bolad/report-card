@@ -1,0 +1,2 @@
+class OverflowsController < ApplicationController
+end

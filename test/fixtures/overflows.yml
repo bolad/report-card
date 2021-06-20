@@ -1,0 +1,35 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cso_name: MyString
+  permit: MyString
+  model: MyString
+  edm_annual_spill_freq: MyString
+  edm_annual_spill_duration: MyString
+  edm_bathing_spill_freq: MyString
+  edm_bathing_spill_duration: MyString
+  model_annual_spill_freq: MyString
+  model_annual_spill_duration: MyString
+  model_annual_spill_volume: MyString
+  model_bathing_spill_freq: MyString
+  model_bathing_spill_duration: MyString
+  model_bathing_spill_volume: MyString
+  comments: MyString
+  report: one
+
+two:
+  cso_name: MyString
+  permit: MyString
+  model: MyString
+  edm_annual_spill_freq: MyString
+  edm_annual_spill_duration: MyString
+  edm_bathing_spill_freq: MyString
+  edm_bathing_spill_duration: MyString
+  model_annual_spill_freq: MyString
+  model_annual_spill_duration: MyString
+  model_annual_spill_volume: MyString
+  model_bathing_spill_freq: MyString
+  model_bathing_spill_duration: MyString
+  model_bathing_spill_volume: MyString
+  comments: MyString
+  report: two

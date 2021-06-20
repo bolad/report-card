@@ -30,15 +30,32 @@
     <div>
       <%= f.fields_for :cellars do |cellar_form| %>
         <div class="rows-container">
-          <%= render 'cellar_fields', f: cellars %>
+          <%= render 'incident_fields', f: cellars %>
         </div>
       <% end %>
     </div>
     <div class="row-buttons">
       <div>
-        <%= link_to_add_association 'Add Row To Cellars Table', f, :incidents, class: "btn-reserved", style: "background-color: #262626; border: none; color: #fff; float: right;" %>
+        <%= link_to_add_association 'Add Row To Cellars Table', f, :cellars, class: "btn-reserved", style: "background-color: #262626; border: none; color: #fff; float: right;" %>
+      </div>
+    <div></br></br></br>
+
+    <div class="text-container">
+      <label class="head-small" style="text-align: center;">Catchment Overflows</label></br>
+      <%= f.rich_text_area :catchment_overflow, class: "form-control text-area-sm" %>
+    </div>
+    <div>
+      <%= f.fields_for :overflows do |overflow_form| %>
+        <div class="rows-container">
+          <%= render 'overflow_fields', f: overflows %>
+        </div>
+      <% end %>
+    </div>
+    <div class="row-buttons">
+      <div>
+        <%= link_to_add_association "Add Row To CSO's Table", f, :overflows, class: "btn-reserved", style: "background-color: #262626; border: none; color: #fff; float: right;" %>
         <div>
-          <%= f.submit "Save Changes" , class: "btn-reserved", style: "background-color: #262626; border: none; color: #fff; float: left;"%>
+          <%= f.submit "Save Changes", class: "btn-reserved", style: "background-color: #262626; border: none; color: #fff; float: left;"%>
         </div>
       </div>
     <div>

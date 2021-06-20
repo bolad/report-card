@@ -6,6 +6,7 @@ class Report < ApplicationRecord
   has_many :connections
   has_many :incidents
   has_many :cellars
+  has_many :overflows
 
   validates :project_name, presence: true
 
@@ -30,6 +31,10 @@ class Report < ApplicationRecord
                                 reject_if: :all_blank, allow_destroy: true
 
   accepts_nested_attributes_for :cellars,
+                                allow_destroy: true,
+                                reject_if: :all_blank, allow_destroy: true
+
+  accepts_nested_attributes_for :overflows,
                                 allow_destroy: true,
                                 reject_if: :all_blank, allow_destroy: true
 

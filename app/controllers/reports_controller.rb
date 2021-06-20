@@ -68,7 +68,8 @@ class ReportsController < ApplicationController
                                     flows_attributes: [:id, :flow_modelled, :include, :comments],
                                     connections_attributes: [:id, :development, :dwf, :thirty_year, :node_ref, :freeboard, :receiving_sewer, :pfc, :pipe, :peak_flow, :pumped],
                                     incidents_attributes: [:id, :location, :postcode, :ngr, :hfrr, :historical_flooding, :wirs, :nearest_node, :modelled_risk, :comments],
-                                    cellars_attributes: [:id, :location, :postcode, :ngr, :flooding_register, :wirs_register, :freeboard, :nearest_node, :comments]
+                                    cellars_attributes: [:id, :location, :postcode, :ngr, :flooding_register, :wirs_register, :freeboard, :nearest_node, :comments],
+                                    overflows_attributes: [:id, :cso_name, :permit, :model, :edm_annual_spill_freq, :edm_annual_spill_duration, :edm_bathing_spill_freq, :edm_bathing_spill_duration, :model_annual_spill_freq, :model_annual_spill_duration, :model_annual_spill_volume, :model_bathing_spill_freq, :model_bathing_spill_duration, :model_bathing_spill_volume, :comments]
                                     )
     end
 end

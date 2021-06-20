@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_20_125411) do
+ActiveRecord::Schema.define(version: 2021_06_20_133705) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -133,6 +133,27 @@ ActiveRecord::Schema.define(version: 2021_06_20_125411) do
     t.index ["report_id"], name: "index_incidents_on_report_id"
   end
 
+  create_table "overflows", force: :cascade do |t|
+    t.string "cso_name"
+    t.string "permit"
+    t.string "model"
+    t.string "edm_annual_spill_freq"
+    t.string "edm_annual_spill_duration"
+    t.string "edm_bathing_spill_freq"
+    t.string "edm_bathing_spill_duration"
+    t.string "model_annual_spill_freq"
+    t.string "model_annual_spill_duration"
+    t.string "model_annual_spill_volume"
+    t.string "model_bathing_spill_freq"
+    t.string "model_bathing_spill_duration"
+    t.string "model_bathing_spill_volume"
+    t.string "comments"
+    t.bigint "report_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["report_id"], name: "index_overflows_on_report_id"
+  end
+
   create_table "reports", force: :cascade do |t|
     t.string "project_name"
     t.string "project_number"
@@ -158,6 +179,7 @@ ActiveRecord::Schema.define(version: 2021_06_20_125411) do
     t.bigint "user_id", null: false
     t.string "revision"
     t.text "cellared_property"
+    t.text "catchment_overflow"
     t.index ["user_id"], name: "index_reports_on_user_id"
   end
 
@@ -186,5 +208,6 @@ ActiveRecord::Schema.define(version: 2021_06_20_125411) do
   add_foreign_key "executives", "reports"
   add_foreign_key "flows", "reports"
   add_foreign_key "incidents", "reports"
+  add_foreign_key "overflows", "reports"
   add_foreign_key "reports", "users"
 end
