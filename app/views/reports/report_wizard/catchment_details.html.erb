@@ -10,7 +10,6 @@
       <label class="head-small" style="text-align: center;">Flooding Locations And Incidents</label></br>
       <%= f.rich_text_area :flooding_locations, class: "form-control text-area-sm" %>
     </div>
-
     <div>
       <%= f.fields_for :incidents do |incident_form| %>
         <div class="rows-container">
@@ -18,14 +17,23 @@
         </div>
       <% end %>
     </div>
-
-    
     <div class="row-buttons">
       <div>
         <%= link_to_add_association 'Add Row To Incidents Table', f, :incidents, class: "btn-reserved", style: "background-color: #262626; border: none; color: #fff; float: right;" %>
       </div>
-    <div></br></br>
+    <div></br></br></br>
 
+    <div class="text-container">
+      <label class="head-small" style="text-align: center;">Cellared Properties</label></br>
+      <%= f.rich_text_area :cellared_property, class: "form-control text-area-sm" %>
+    </div>
+    <div>
+      <%= f.fields_for :cellars do |cellar_form| %>
+        <div class="rows-container">
+          <%= render 'cellar_fields', f: cellars %>
+        </div>
+      <% end %>
+    </div>
     <div class="row-buttons">
       <div>
         <%= link_to_add_association 'Add Row To Cellars Table', f, :incidents, class: "btn-reserved", style: "background-color: #262626; border: none; color: #fff; float: right;" %>

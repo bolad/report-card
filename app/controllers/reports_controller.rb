@@ -67,7 +67,8 @@ class ReportsController < ApplicationController
                                     backgrounds_attributes: [:id, :site_name, :location, :property_count, :site_type],
                                     flows_attributes: [:id, :flow_modelled, :include, :comments],
                                     connections_attributes: [:id, :development, :dwf, :thirty_year, :node_ref, :freeboard, :receiving_sewer, :pfc, :pipe, :peak_flow, :pumped],
-                                    incidents_attributes: [:id, :location, :postcode, :ngr, :hfrr, :historical_flooding, :wirs, :nearest_node, :modelled_risk, :comments]
+                                    incidents_attributes: [:id, :location, :postcode, :ngr, :hfrr, :historical_flooding, :wirs, :nearest_node, :modelled_risk, :comments],
+                                    cellars_attributes: [:id, :location, :postcode, :ngr, :flooding_register, :wirs_register, :freeboard, :nearest_node, :comments]
                                     )
     end
 end

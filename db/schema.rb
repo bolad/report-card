@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_20_112633) do
+ActiveRecord::Schema.define(version: 2021_06_20_125411) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,6 +62,21 @@ ActiveRecord::Schema.define(version: 2021_06_20_112633) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["report_id"], name: "index_backgrounds_on_report_id"
+  end
+
+  create_table "cellars", force: :cascade do |t|
+    t.string "location"
+    t.string "postcode"
+    t.string "ngr"
+    t.string "flooding_register"
+    t.string "wirs_register"
+    t.string "nearest_node"
+    t.string "freeboard"
+    t.string "comments"
+    t.bigint "report_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["report_id"], name: "index_cellars_on_report_id"
   end
 
   create_table "connections", force: :cascade do |t|
@@ -142,6 +157,7 @@ ActiveRecord::Schema.define(version: 2021_06_20_112633) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id", null: false
     t.string "revision"
+    t.text "cellared_property"
     t.index ["user_id"], name: "index_reports_on_user_id"
   end
 
@@ -165,6 +181,7 @@ ActiveRecord::Schema.define(version: 2021_06_20_112633) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "backgrounds", "reports"
+  add_foreign_key "cellars", "reports"
   add_foreign_key "connections", "reports"
   add_foreign_key "executives", "reports"
   add_foreign_key "flows", "reports"
