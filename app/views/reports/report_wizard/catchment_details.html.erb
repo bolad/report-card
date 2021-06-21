@@ -71,6 +71,23 @@
     <div class="row-buttons">
       <div>
         <%= link_to_add_association "Add Row To Pumping Stations Table", f, :pumps, class: "btn-reserved", style: "background-color: #262626; border: none; color: #fff; float: right;" %>
+      </div>
+    <div></br></br></br>
+
+    <div class="text-container">
+      <label class="head-small" style="text-align: center;">Catchment Tanks</label></br>
+      <%= f.rich_text_area :catchment_tank, class: "form-control text-area-sm" %>
+    </div>
+    <div>
+      <%= f.fields_for :tanks do |tank_form| %>
+        <div class="rows-container">
+          <%= render 'tank_fields', f: tanks %>
+        </div>
+      <% end %>
+    </div>
+    <div class="row-buttons">
+      <div>
+        <%= link_to_add_association "Add Row To Catchment Tanks", f, :tanks, class: "btn-reserved", style: "background-color: #262626; border: none; color: #fff; float: right;" %>
         <div>
           <%= f.submit "Save Changes", class: "btn-reserved", style: "background-color: #262626; border: none; color: #fff; float: left;"%>
         </div>

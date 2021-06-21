@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tank_ref: MyString
+  name: MyString
+  overflow_ref: MyString
+  online: MyString
+  permitted_storage: MyString
+  effective_storage: MyString
+  annual_volume: MyString
+  comments: MyString
+  report: one
+
+two:
+  tank_ref: MyString
+  name: MyString
+  overflow_ref: MyString
+  online: MyString
+  permitted_storage: MyString
+  effective_storage: MyString
+  annual_volume: MyString
+  comments: MyString
+  report: two

@@ -8,6 +8,7 @@ class Report < ApplicationRecord
   has_many :cellars
   has_many :overflows
   has_many :pumps
+  has_many :tanks
 
   validates :project_name, presence: true
 
@@ -40,6 +41,10 @@ class Report < ApplicationRecord
                                 reject_if: :all_blank, allow_destroy: true
 
   accepts_nested_attributes_for :pumps,
+                                allow_destroy: true,
+                                reject_if: :all_blank, allow_destroy: true
+
+  accepts_nested_attributes_for :tanks,
                                 allow_destroy: true,
                                 reject_if: :all_blank, allow_destroy: true
 

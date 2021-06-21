@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_21_154125) do
+ActiveRecord::Schema.define(version: 2021_06_21_204257) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -195,7 +195,23 @@ ActiveRecord::Schema.define(version: 2021_06_21_154125) do
     t.text "cellared_property"
     t.text "catchment_overflow"
     t.text "pumping_station"
+    t.text "catchment_tank"
     t.index ["user_id"], name: "index_reports_on_user_id"
+  end
+
+  create_table "tanks", force: :cascade do |t|
+    t.string "tank_ref"
+    t.string "name"
+    t.string "overflow_ref"
+    t.string "online"
+    t.string "permitted_storage"
+    t.string "effective_storage"
+    t.string "annual_volume"
+    t.string "comments"
+    t.bigint "report_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["report_id"], name: "index_tanks_on_report_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -226,4 +242,5 @@ ActiveRecord::Schema.define(version: 2021_06_21_154125) do
   add_foreign_key "overflows", "reports"
   add_foreign_key "pumps", "reports"
   add_foreign_key "reports", "users"
+  add_foreign_key "tanks", "reports"
 end
