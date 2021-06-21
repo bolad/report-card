@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_20_133705) do
+ActiveRecord::Schema.define(version: 2021_06_21_154125) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -154,6 +154,20 @@ ActiveRecord::Schema.define(version: 2021_06_20_133705) do
     t.index ["report_id"], name: "index_overflows_on_report_id"
   end
 
+  create_table "pumps", force: :cascade do |t|
+    t.string "station_ref"
+    t.string "name"
+    t.string "overflow_ref"
+    t.string "permitted_rate"
+    t.string "modelled_rate"
+    t.string "run_time"
+    t.string "comments"
+    t.bigint "report_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["report_id"], name: "index_pumps_on_report_id"
+  end
+
   create_table "reports", force: :cascade do |t|
     t.string "project_name"
     t.string "project_number"
@@ -180,6 +194,7 @@ ActiveRecord::Schema.define(version: 2021_06_20_133705) do
     t.string "revision"
     t.text "cellared_property"
     t.text "catchment_overflow"
+    t.text "pumping_station"
     t.index ["user_id"], name: "index_reports_on_user_id"
   end
 
@@ -209,5 +224,6 @@ ActiveRecord::Schema.define(version: 2021_06_20_133705) do
   add_foreign_key "flows", "reports"
   add_foreign_key "incidents", "reports"
   add_foreign_key "overflows", "reports"
+  add_foreign_key "pumps", "reports"
   add_foreign_key "reports", "users"
 end
