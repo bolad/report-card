@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :data_summaries
   resources :model_databases
   resources :tanks
   resources :pumps

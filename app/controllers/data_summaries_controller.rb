@@ -1,0 +1,2 @@
+class DataSummariesController < ApplicationController
+end

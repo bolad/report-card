@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_22_193047) do
+ActiveRecord::Schema.define(version: 2021_06_28_212906) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -94,6 +94,19 @@ ActiveRecord::Schema.define(version: 2021_06_22_193047) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["report_id"], name: "index_connections_on_report_id"
+  end
+
+  create_table "data_summaries", force: :cascade do |t|
+    t.string "summary_1"
+    t.string "summary_2"
+    t.string "summary_3"
+    t.string "summary_4"
+    t.string "summary_5"
+    t.string "summary_6"
+    t.bigint "report_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["report_id"], name: "index_data_summaries_on_report_id"
   end
 
   create_table "executives", force: :cascade do |t|
@@ -256,6 +269,7 @@ ActiveRecord::Schema.define(version: 2021_06_22_193047) do
   add_foreign_key "backgrounds", "reports"
   add_foreign_key "cellars", "reports"
   add_foreign_key "connections", "reports"
+  add_foreign_key "data_summaries", "reports"
   add_foreign_key "executives", "reports"
   add_foreign_key "flows", "reports"
   add_foreign_key "incidents", "reports"
