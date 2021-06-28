@@ -7,20 +7,68 @@
   <%= form_for @report, url: report_report_wizard_path, method: :put do |f| %>
     <div class="text-container">
       <%= f.rich_text_area :data_assessment, class: "form-control text-area" %>
-    </div>
-
+    </div></br>
+    <h3 class="head-md-dark">Model Fit For Purpose (FFP) Review</h3></br>
     <div>
-      <%= f.fields_for :backgrounds do |background_form| %>
-        <div class="rows-container">
-          <%= render 'background_fields', f: background_form %>
+      <%= f.fields_for :model_databases do |database_form| %>
+        <div class="hidden-container nested-fields shadow rounded">
+        <div class="form-group hidden-field">
+          <label class="head-small">Model Type (I, II, III)</label>
+          <%= database_form.text_area :model_type, class: 'form-control text-area-sm' %>
         </div>
+        <div class="form-group hidden-field">
+          <label class="head-small">Subcatchment Review</label>
+          <%= database_form.text_area :subcatchment_review, class: 'form-control text-area-sm' %>
+        </div>
+        <div class="form-group hidden-field">
+          <label class="head-small">Contributing Areas</label>
+          <%= database_form.text_area :contributing_areas, class: 'form-control text-area-sm' %>
+        </div>
+        <div class="form-group hidden-field">
+          <label class="head-small">Flooding Representation</label>
+          <%= database_form.text_area :flooding_representation, class: 'form-control text-area-sm' %>
+        </div>
+        <div class="form-group hidden-field">
+          <label class="head-small">Soil Type</label>
+          <%= database_form.text_area :soil_type, class: 'form-control text-area-sm' %>
+        </div>
+        <div class="form-group hidden-field">
+          <label class="head-small">Runoff Model</label>
+          <%= database_form.text_area :runoff_model, class: 'form-control text-area-sm' %>
+        </div>
+        <div class="form-group hidden-field">
+          <label class="head-small">Sewer Ancillaries – WwTW</label>
+          <%= database_form.text_area :ancillaries_wwtw, class: 'form-control text-area-sm' %>
+        </div>
+        <div class="form-group hidden-field">
+          <label class="head-small">Sewer Ancillaries – CSO’s</label>
+          <%= database_form.text_area :ancillaries_cso, class: 'form-control text-area-sm' %>
+        </div>
+        <div class="form-group hidden-field">
+          <label class="head-small">Sewer Ancillaries - Tanks</label>
+          <%= database_form.text_area :ancillaries_tanks, class: 'form-control text-area-sm' %>
+        </div>
+        <div class="form-group hidden-field">
+          <label class="head-small">Sewer Ancillaries – Pumping Stations</label>
+          <%= database_form.text_area :ancillaries_pumps, class: 'form-control text-area-sm' %>
+        </div>
+        <div class="form-group hidden-field">
+          <label class="head-small">FEH Rainfall Data</label>
+          <%= database_form.text_area :rainfall_data, class: 'form-control text-area-sm' %>
+        </div>
+        <div class="form-group hidden-field">
+          <label class="head-small">Is model update required prior to undertaking a full DIA assessment?</label>
+          <%= database_form.text_area :model_update, class: 'form-control text-area-sm' %>
+        </div>
+        <div class="form-group hidden-field">
+          <label class="head-small">Is the current model deemed suitable to undertake a full DIA?</label>
+          <%= database_form.text_area :model_suitable, class: 'form-control text-area-sm' %>
+        </div>
+      </div></br>
       <% end %>
     </div>
     
     <div class="row-buttons">
-      <div>
-        <%= link_to_add_association 'Add Table Row', f, :backgrounds, class: "btn-reserved", style: "background-color: #262626; border: none; color: #fff; float: right;" %>
-      </div>
       <div>
         <%= f.submit "Save Changes" , class: "btn-reserved", style: "background-color: #262626; border: none; color: #fff; float: left;"%>
       </div>

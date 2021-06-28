@@ -1,0 +1,33 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  model_type: MyText
+  subcatchment_review: MyText
+  contributing_areas: MyText
+  flooding_representation: MyText
+  soil_type: MyText
+  runoff_model: MyText
+  ancillaries_wwtw: MyText
+  ancillaries_cso: MyText
+  ancillaries_tanks: MyText
+  ancillaries_pumps: MyText
+  rainfall_data: MyText
+  model_update: MyText
+  model_suitable: MyText
+  report: one
+
+two:
+  model_type: MyText
+  subcatchment_review: MyText
+  contributing_areas: MyText
+  flooding_representation: MyText
+  soil_type: MyText
+  runoff_model: MyText
+  ancillaries_wwtw: MyText
+  ancillaries_cso: MyText
+  ancillaries_tanks: MyText
+  ancillaries_pumps: MyText
+  rainfall_data: MyText
+  model_update: MyText
+  model_suitable: MyText
+  report: two

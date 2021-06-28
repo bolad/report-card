@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_21_204257) do
+ActiveRecord::Schema.define(version: 2021_06_22_193047) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -133,6 +133,26 @@ ActiveRecord::Schema.define(version: 2021_06_21_204257) do
     t.index ["report_id"], name: "index_incidents_on_report_id"
   end
 
+  create_table "model_databases", force: :cascade do |t|
+    t.text "model_type"
+    t.text "subcatchment_review"
+    t.text "contributing_areas"
+    t.text "flooding_representation"
+    t.text "soil_type"
+    t.text "runoff_model"
+    t.text "ancillaries_wwtw"
+    t.text "ancillaries_cso"
+    t.text "ancillaries_tanks"
+    t.text "ancillaries_pumps"
+    t.text "rainfall_data"
+    t.text "model_update"
+    t.text "model_suitable"
+    t.bigint "report_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["report_id"], name: "index_model_databases_on_report_id"
+  end
+
   create_table "overflows", force: :cascade do |t|
     t.string "cso_name"
     t.string "permit"
@@ -239,6 +259,7 @@ ActiveRecord::Schema.define(version: 2021_06_21_204257) do
   add_foreign_key "executives", "reports"
   add_foreign_key "flows", "reports"
   add_foreign_key "incidents", "reports"
+  add_foreign_key "model_databases", "reports"
   add_foreign_key "overflows", "reports"
   add_foreign_key "pumps", "reports"
   add_foreign_key "reports", "users"
