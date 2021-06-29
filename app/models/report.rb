@@ -10,6 +10,7 @@ class Report < ApplicationRecord
   has_many :pumps
   has_many :tanks
   has_one :model_database
+  has_one :data_summary
 
   validates :project_name, presence: true
 
@@ -45,6 +46,9 @@ class Report < ApplicationRecord
                                 allow_destroy: true
 
   accepts_nested_attributes_for :model_database,
+                                allow_destroy: true
+
+  accepts_nested_attributes_for :data_summary,
                                 allow_destroy: true
 
   has_rich_text :executive_summary

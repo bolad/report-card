@@ -72,7 +72,8 @@ class ReportsController < ApplicationController
                                     overflows_attributes: [:id, :cso_name, :permit, :model, :edm_annual_spill_freq, :edm_annual_spill_duration, :edm_bathing_spill_freq, :edm_bathing_spill_duration, :model_annual_spill_freq, :model_annual_spill_duration, :model_annual_spill_volume, :model_bathing_spill_freq, :model_bathing_spill_duration, :model_bathing_spill_volume, :comments],
                                     pumps_attributes: [:id, :station_ref, :name, :overflow_ref, :permitted_rate, :modelled_rate, :run_time, :comments],
                                     tanks_attributes: [:id, :tank_ref, :name, :overflow_ref, :online, :permitted_storage, :effective_storage, :annual_volume, :comments],
-                                    model_database_attributes: [:id, :model_type, :subcatchment_review, :contributing_areas, :flooding_representation, :soil_type, :runoff_model, :ancillaries_wwtw, :ancillaries_cso, :ancillaries_tanks, :ancillaries_pumps, :rainfall_data, :model_update, :model_suitable]
+                                    model_database_attributes: [:id, :model_type, :subcatchment_review, :contributing_areas, :flooding_representation, :soil_type, :runoff_model, :ancillaries_wwtw, :ancillaries_cso, :ancillaries_tanks, :ancillaries_pumps, :rainfall_data, :model_update, :model_suitable],
+                                    data_summary_attributes: [:id, :summary_1, :summary_2, :summary_3, :summary_4, :summary_5, :summary_6]
                                     )
     end
 end
