@@ -4,58 +4,58 @@
     <%= render 'steps' %> 
     <h2 class="head-large">Project Information</h2>
   </div>
+  <div>
+    <%= form_for @report, url: report_report_wizard_path, method: :put do |f| %>
+      <div class="field form-field">
+        <%= f.label :project_number, class: "head-small form-label" %>
+        <%= f.text_field :project_number, class: "form-input" %>
+      </div>
+      <div class="field form-field">
+        <%= f.label :document_title, class: "head-small form-label" %>
+        <%= f.text_field :document_title, class: "form-input" %>
+      </div>
+      <div class="field form-field">
+        <%= f.label :document_number, class: "head-small form-label" %>
+        <%= f.text_field :document_number, class: "form-input" %>
+      </div>
+      <div class="field form-field">
+        <%= f.label :document_status, class: "head-small form-label" %>
+        <%= f.text_field :document_status, class: "form-input" %>
+      </div>
+      <div class="field form-field">
+        <%= f.label :date, class: "head-small form-label" %>
+        <%= f.text_field :date, class: "form-input" %>
+      </div>
+      <div class="field form-field">
+        <%= f.label :client_name, class: "head-small form-label" %>
+        <%= f.text_field :client_name, class: "form-input" %>
+      </div>
+      <div class="field form-field">
+        <%= f.label :client_number, class: "head-small form-label" %>
+        <%= f.text_field :client_number, class: "form-input" %>
+      </div>
+      <div class="field form-field">
+        <%= f.label :project_manager, class: "head-small form-label" %>
+        <%= f.text_field :project_manager, class: "form-input" %>
+      </div>
+      <div class="field form-field">
+        <%= f.label :author, class: "head-small form-label" %>
+        <%= f.text_field :author, class: "form-input" %>
+      </div>
+      <div class="field form-field">
+        <%= f.label :revision, class: "head-small form-label" %>
+        <%= f.text_field :revision, class: "form-input" %>
+      </div>
+      <div class="field form-field">
+        <%= f.label :description, class: "head-small form-label" %>
+        <%= f.text_field :description, class: "form-input" %>
+      </div>
 
-  <%= form_for @report, url: report_report_wizard_path, method: :put do |f| %>
-    <div class="field form-field">
-      <%= f.label :project_number, class: "head-small form-label" %>
-      <%= f.text_field :project_number, class: "form-input" %>
-    </div>
-    <div class="field form-field">
-      <%= f.label :document_title, class: "head-small form-label" %>
-      <%= f.text_field :document_title, class: "form-input" %>
-    </div>
-    <div class="field form-field">
-      <%= f.label :document_number, class: "head-small form-label" %>
-      <%= f.text_field :document_number, class: "form-input" %>
-    </div>
-    <div class="field form-field">
-      <%= f.label :document_status, class: "head-small form-label" %>
-      <%= f.text_field :document_status, class: "form-input" %>
-    </div>
-    <div class="field form-field">
-      <%= f.label :date, class: "head-small form-label" %>
-      <%= f.text_field :date, class: "form-input" %>
-    </div>
-    <div class="field form-field">
-      <%= f.label :client_name, class: "head-small form-label" %>
-      <%= f.text_field :client_name, class: "form-input" %>
-    </div>
-    <div class="field form-field">
-      <%= f.label :client_number, class: "head-small form-label" %>
-      <%= f.text_field :client_number, class: "form-input" %>
-    </div>
-    <div class="field form-field">
-      <%= f.label :project_manager, class: "head-small form-label" %>
-      <%= f.text_field :project_manager, class: "form-input" %>
-    </div>
-    <div class="field form-field">
-      <%= f.label :author, class: "head-small form-label" %>
-      <%= f.text_field :author, class: "form-input" %>
-    </div>
-    <div class="field form-field">
-      <%= f.label :revision, class: "head-small form-label" %>
-      <%= f.text_field :revision, class: "form-input" %>
-    </div>
-    <div class="field form-field">
-      <%= f.label :description, class: "head-small form-label" %>
-      <%= f.text_field :description, class: "form-input" %>
-    </div>
-
-    <div class="btn btn-inverse">
-      <%= f.submit "Save Changes" , style: "background-color: #262626; border: none; color: #fff;"%>
-    </div>
-  <% end %>
-
+      <div>
+        <%= f.submit "Save Changes" , class: "btn-reserved", style: "background-color: #262626; border: none; color: #fff; float: left;"%>
+      </div>
+    <% end %>
+  </div></br></br>
 
   <hr style="height: .1rem; background-color: #262626; width:100%;">
 

@@ -1,0 +1,17 @@
+<div class="hidden-container nested-fields shadow rounded">
+  <div class="form-group hidden-field">
+    <label class="head-small-low">Data Required</label>
+    <%= f.text_field :data_required, class: 'form-control' %>
+  </div>
+  <div class="form-group hidden-field">
+    <label class="head-small-low">Provided (Y/N)</label>
+    <%= f.text_field :provided, class: 'form-control' %>
+  </div>
+  <div class="form-group hidden-field">
+    <label class="head-small-low">File Name</label>
+    <%= f.text_field :file_name, class: 'form-control' %>
+  </div>
+  <div class="form-group hidden-field">
+    <%= link_to_remove_association 'Delete Row', f, class: "delete-row" %>
+  </div>
+</div></br>
