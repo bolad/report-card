@@ -175,4 +175,39 @@
   </div>
 </section>
 
+<section class="executive" id="executive">
+        <div class="report-container">
+          <h5 class="section-head-large">Executive Summary</h5></br>
+          <div class="project-table">
+            <table>
+              <thead>
+                <tr>
+                  <td>Project Name</td>
+                  <td>Jacobs Project Number</td>
+                  <td>Potential Impact</td>
+                  <td>Date</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <% @report.executives.each do |executive| %>
+                    <td><%= executive.project_name %></td>
+                    <td><%= executive.project_number %></td>
+                    <td><%= executive.potential_impact %></td>
+                    <td><%= executive.date %></td>
+                  <% end %>
+                </tr>                
+              </tbody>
+            </table>
+          </div><br/>
+          <div>
+
+            <p class="summary">
+              <%= @report.executive_summary %>
+            </p>
+          </div>
+          
+        </div>
+      </section>
+
 </main>
