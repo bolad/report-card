@@ -17,6 +17,7 @@ global.toastr = require("toastr");
 
 require("jquery")
 require("@nathanvda/cocoon")
+//require("packs/custom")
 
 Rails.start()
 Turbolinks.start()

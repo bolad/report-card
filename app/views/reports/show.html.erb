@@ -1,37 +1,93 @@
-<div class="container">
-  <p id="notice"><%= notice %></p>
-
-
-    <%= @report.project_name %>
-    <%= @report.executive_summary %>
-    
-      <div class="project-table">
-            <table>
-              <thead>
-                <tr>
-                  <td>Project Name</td>
-                  <td>Jacobs Project Number</td>
-                  <td>Potential Impact</td>
-                  <td>Date</td>
-                </tr>
-              </thead>
-              <tbody>
-                <% @report.executives.each do |executive| %>
-                <tr>
-                  <td><%= executive.project_name %></td>
-                  <td><%= executive.project_number %></td>
-                  <td><%= executive.potential_impact %></td>
-                  <td><%= executive.date %></td>
-                </tr>   
-                <% end %>             
-              </tbody>
-            </table>
-          </div><br/>
-      
-   
-
-  <%= link_to "update report", report_report_wizard_index_path(@report) %>
-
-  <%= link_to 'Edit', report_report_wizard_index_path(@report) %> |
-  <%= link_to 'Back', reports_path %>
+<div class="hamburger-menu">
+  <i class="fa fa-bars"></i>
+  <i class="fa fa-times"></i>
 </div>
+
+<nav class="sidebar">
+  <div class="sidebar-list">
+    <div class="sidebar-item">
+      <a href="#title-block" class="sidebar-link">Project Information</a>
+    </div>
+    <div class="sidebar-item">
+      <a href="#executive" class="sidebar-link">Executive Summary</a>
+    </div>
+    <div class="sidebar-item">
+      <a href="#project-background" class="sidebar-link">Project Background</a>
+    </div>
+    <div class="sidebar-item">
+      <a href="#project-objective" class="sidebar-link">Project Objective</a>
+    </div>
+    <div class="sidebar-item">
+      <a href="#project-development" class="sidebar-link">Proposed Developments</a>
+    </div>
+
+    <button class="accordion">Catchment Details</button>
+    <div class="panel">
+      <div class="sidebar-item-sub">
+        <a href="#flood-location" class="sidebar-link-sub">Flooding Locations and Incidents</a>
+      </div>
+      <div class="sidebar-item-sub">
+        <a href="#cellared-properties" class="sidebar-link-sub">Cellared Properties</a>
+      </div>
+      <div class="sidebar-item-sub">
+        <a href="#catchment-overflows" class="sidebar-link-sub">Catchment Overflows</a>
+      </div>
+      <div class="sidebar-item-sub">
+        <a href="#pumping-stations" class="sidebar-link-sub">Pumping Stations</a>
+      </div>
+      <div class="sidebar-item-sub">
+        <a href="#catchment-tanks" class="sidebar-link-sub">Catchment Tanks</a>
+      </div>
+    </div>
+    <button class="accordion">Data Assessment</button>
+    <div class="panel">
+      <div class="sidebar-item-sub">
+        <a href="#model-database" class="sidebar-link-sub">Model Database</a>
+      </div>
+      <div class="sidebar-item-sub">
+        <a href="#data-summary" class="sidebar-link-sub" style="height: 5rem;">Data Summary</a>
+      </div>
+    </div>
+    <div class="sidebar-item">
+      <a href="#project-development" class="sidebar-link">Conclusions</a>
+    </div>
+    <button class="accordion">Appendix</button>
+    <div class="panel">
+      <div class="sidebar-item-sub">
+        <a href="#fig1" class="sidebar-link-sub">Development Sites</a>
+      </div>
+      <div class="sidebar-item-sub">
+        <a href="#fig2" class="sidebar-link-sub">Flood Locations</a>
+      </div>
+      <div class="sidebar-item-sub">
+        <a href="#fig3" class="sidebar-link-sub">Ancillary Locations</a>
+      </div>
+      <div class="sidebar-item-sub">
+        <a href="#fig4" class="sidebar-link-sub">2D Overland Flooding</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-item"><%= link_to 'Update', "#", class: "btn" %></div>
+    <div class="footer-item"><%= link_to 'Delete', "#", class: "btn" %></div>
+  </div>
+</nav>
+
+<main class="main">
+  <section class="title-block" id="title-block">
+    <h2>AMP7 Development Impact Assessment Batch 4</h2><br/>
+    <h4>J822 Former UBH International Ltd Orrell Lane Burscough  DIA Triage Report</h4><br/>
+    <h4>001|001</h4><br/>
+    <h4>28th May 2021</h4><br/>
+    <h4>United Utilities</h4><br/>
+    <h4>SE661</h4><br/>
+    <div class="logo">
+      <%= image_tag 'logo.png', class: "logo-image" %>
+    </div>
+  </section>
+
+  <section class="hero">
+    <%= image_tag 'bg.png', class: "hero-image" %>
+  </section>
+</main>

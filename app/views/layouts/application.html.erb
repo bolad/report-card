@@ -6,17 +6,19 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= render 'shared/navbar' %>
+    <% unless action_name == "show" %>
+      <%= render 'shared/navbar' %>
+    <% end %>
     <%= render 'shared/messages' %>
-    </br>
-    <div class="container">
-      <%= yield %>
-    </div>
+    <%= yield %>
+    <%= javascript_pack_tag 'custom' %>
   </body>
 </html>
