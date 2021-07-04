@@ -43,6 +43,14 @@
         <%= f.text_field :author, class: "form-input" %>
       </div>
       <div class="field form-field">
+        <%= f.label :checked_by, class: "head-small form-label" %>
+        <%= f.text_field :checked_by, class: "form-input" %>
+      </div>
+      <div class="field form-field">
+        <label class="head-small form-label">Reviewed By</label>
+        <%= f.text_field :approved_by, class: "form-input" %>
+      </div>
+      <div class="field form-field">
         <%= f.label :revision, class: "head-small form-label" %>
         <%= f.text_field :revision, class: "form-input" %>
       </div>
