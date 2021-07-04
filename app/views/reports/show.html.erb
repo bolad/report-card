@@ -76,12 +76,12 @@
 
 <main class="main">
   <section class="title-block" id="title-block">
-    <h2>AMP7 Development Impact Assessment Batch 4</h2><br/>
-    <h4>J822 Former UBH International Ltd Orrell Lane Burscough  DIA Triage Report</h4><br/>
-    <h4>001|001</h4><br/>
-    <h4>28th May 2021</h4><br/>
-    <h4>United Utilities</h4><br/>
-    <h4>SE661</h4><br/>
+    <h2><%= @report.project_name %></h2><br/>
+    <h4><%= @report.document_title %></h4><br/>
+    <h4><%= @report.document_number %> | <%= @report.revision %> </h4><br/>
+    <h4><%= @report.date %></h4><br/>
+    <h4><%= @report.client_name %></h4><br/>
+    <h4><%= @report.client_number%></h4><br/>
     <div class="logo">
       <%= image_tag 'logo.png', class: "logo-image" %>
     </div>
@@ -90,4 +90,89 @@
   <section class="hero">
     <%= image_tag 'bg.png', class: "hero-image" %>
   </section>
+
+  <section class="project-info">
+  <div class="report-container">
+    <h2><%= @report.project_name %></h2><br/>
+    <h4><pre>Project Number:    <%= @report.project_number %></pre></h4>
+    <h4><pre>Document Title:    <%= @report.document_title %></pre></h4>
+    <h4><pre>Document Number:   <%= @report.document_number %></pre></h4>
+    <h4><pre>Document Status:   <%= @report.document_status %></pre></h4>
+    <h4><pre>Date:              <%= @report.date %></pre></h4>
+    <h4><pre>Client Name:       <%= @report.client_name %></pre></h4>
+    <h4><pre>Client Number:     <%= @report.client_number%></pre></h4>
+    <h4><pre>Project Manager:   <%= @report.project_manager%></pre></h4>
+    <h4><pre>Author:            <%= @report.author%></pre></h4>
+  </div><br/>
+
+  <div class="report-container">
+    <span>Jacobs Consultancy Ltd.</span><br/>
+    <span>5 First Street</span><br/>
+    <span>Manchester M15 4GU</span><br/>
+    <span>United Kingdom</span><br/>
+    <span>T +44 (0)161 235 6000</span><br/>
+    <span>F +44 (0)161 235 6001</span><br/>
+    <span class="website">www.jacobs.com</span>
+  </div><br/><br/>
+
+  <div class="report-container">
+    <span>Document history and status</span>
+    <div class="project-table" id="project-table">
+      <div>
+        <table>
+          <thead>
+            <tr>
+              <td>Revision</td>
+              <td>Date</td>
+              <td>Desciption</td>
+              <td>Author</td>
+              <td>Checked</td>
+              <td>Reviewed</td>
+              <td>Approved</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><%= @report.revision%></td>
+              <td><%= @report.date%></td>
+              <td><%= @report.description%></td>
+              <td><%= @report.author%></td>
+              <td><%= @report.checked_by%></td>
+              <td><%= @report.re%></td>
+              <td>F. Murray</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
 </main>
