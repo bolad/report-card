@@ -11,7 +11,7 @@
     </div>
 
     <div>
-      <%= f.fields_for :executives do |executive_form| %>
+      <%= f.fields_for :executive_attributes, @report.executive do |executive_form| %>
         <div class="rows-container">
           <%= render 'executive_fields', f: executive_form %>
         </div>
@@ -19,9 +19,6 @@
     </div>
     
     <div class="row-buttons">
-      <div>
-        <%= link_to_add_association 'Add Row to Table', f, :executives, class: "btn-reserved", style: "background-color: #262626; border: none; color: #fff; float: right;" %>
-      </div>
       <div>
         <%= f.submit "Save Changes" , class: "btn-reserved", style: "background-color: #262626; border: none; color: #fff; float: left;"%>
       </div>
