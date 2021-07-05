@@ -176,38 +176,68 @@
 </section>
 
 <section class="executive" id="executive">
-        <div class="report-container">
-          <h5 class="section-head-large">Executive Summary</h5></br>
-          <div class="project-table">
-            <table>
-              <thead>
-                <tr>
-                  <td>Project Name</td>
-                  <td>Jacobs Project Number</td>
-                  <td>Potential Impact</td>
-                  <td>Date</td>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <% @report.executives.each do |executive| %>
-                    <td><%= executive.project_name %></td>
-                    <td><%= executive.project_number %></td>
-                    <td><%= executive.potential_impact %></td>
-                    <td><%= executive.date %></td>
-                  <% end %>
-                </tr>                
-              </tbody>
-            </table>
-          </div><br/>
-          <div>
+  <div class="report-container">
+    <h5 class="section-head-large">Executive Summary</h5></br>
+    <div class="project-table">
+      <table>
+        <thead>
+          <tr>
+            <td>Project Name</td>
+            <td>Jacobs Project Number</td>
+            <td>Potential Impact</td>
+            <td>Date</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><%= @report.executive.project_name %></td>
+            <td><%= @report.executive.project_number %></td>
+            <td><%= @report.executive.potential_impact %></td>
+            <td><%= @report.executive.date %></td>
+          </tr>                
+        </tbody>
+      </table>
+    </div><br/>
+    <div>
 
-            <p class="summary">
-              <%= @report.executive_summary %>
-            </p>
-          </div>
-          
-        </div>
-      </section>
+      <p class="summary">
+        <%= @report.executive_summary %>
+      </p>
+    </div>
+    
+  </div>
+</section>
+
+<section class="project-background" id="project-background">
+<div class="report-container">
+  <h5 class="section-head-large">Project Background</h5></br>
+  <p class="summary">
+    <%= @report.background_intro %>
+  </p>
+  </br>
+  <span class="table-name">Table 1.1 – Development Location</span>
+  <div class="project-table">
+    <table>
+      <thead>
+        <tr>
+          <td>Site Name</td>
+          <td>Location</td>
+          <td>Property Count</td>
+          <td>Site Type</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><%= @report.background.site_name %></td>
+          <td><%= @report.background.location %></td>
+          <td><%= @report.background.property_count %></td>
+          <td><%= @report.background.site_type %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div></br>
+    <p><%= @report.project_background %></p>
+</div>
+</section>
 
 </main>

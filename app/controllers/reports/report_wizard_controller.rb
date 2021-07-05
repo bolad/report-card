@@ -62,10 +62,10 @@ class Reports::ReportWizardController < ApplicationController
 
   def report_params
     params.require(:report).permit(:project_name, :project_number, :document_title, :document_number, :document_status, :date, :revision, :approved_by,
-                                  :client_name, :client_number, :project_manager, :author, :checked_by, :description, :executive_summary, 
+                                  :client_name, :client_number, :project_manager, :author, :checked_by, :description, :executive_summary, :background_intro,
                                   :project_background, :project_objective, :proposed_developments, :catchment_details, :data_assessment, :conclusion, 
                                   executive_attributes: [:id, :project_name, :project_number, :potential_impact, :date], 
-                                  backgrounds_attributes: [:id, :site_name, :location, :property_count, :site_type],
+                                  background_attributes: [:id, :site_name, :location, :property_count, :site_type],
                                   flows_attributes: [:id, :flow_modelled, :include, :comments],
                                   connections_attributes: [:id, :development, :dwf, :thirty_year, :node_ref, :freeboard, :receiving_sewer, :pfc, :pipe, :peak_flow, :pumped],
                                   incidents_attributes: [:id, :location, :postcode, :ngr, :hfrr, :historical_flooding, :wirs, :nearest_node, :modelled_risk, :comments],

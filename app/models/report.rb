@@ -1,7 +1,6 @@
 class Report < ApplicationRecord
   belongs_to :user
 
-  has_many :backgrounds, :dependent => :delete_all
   has_many :flows, :dependent => :delete_all
   has_many :connections, :dependent => :delete_all
   has_many :incidents, :dependent => :delete_all
@@ -13,13 +12,14 @@ class Report < ApplicationRecord
   has_one :model_database, dependent: :destroy
   has_one :data_summary, dependent: :destroy
   has_one :executive, dependent: :destroy
+  has_one :background, dependent: :destroy
 
   validates :project_name, presence: true
 
   accepts_nested_attributes_for :executive,
                                 allow_destroy: true
 
-  accepts_nested_attributes_for :backgrounds,
+  accepts_nested_attributes_for :background,
                                 allow_destroy: true
 
   accepts_nested_attributes_for :flows,
@@ -54,6 +54,7 @@ class Report < ApplicationRecord
 
   has_rich_text :executive_summary
   has_rich_text :project_background
+  has_rich_text :background_intro
   has_rich_text :project_objective
   has_rich_text :proposed_developments
   has_rich_text :catchment_details
