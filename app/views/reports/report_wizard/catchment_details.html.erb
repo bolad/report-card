@@ -13,7 +13,7 @@
     <div>
       <%= f.fields_for :incidents do |incident_form| %>
         <div class="rows-container">
-          <%= render 'incident_fields', f: incidents %>
+          <%= render 'incident_fields', f: incident_form %>
         </div>
       <% end %>
     </div>
@@ -30,7 +30,7 @@
     <div>
       <%= f.fields_for :cellars do |cellar_form| %>
         <div class="rows-container">
-          <%= render 'incident_fields', f: cellars %>
+          <%= render 'incident_fields', f: cellar_form %>
         </div>
       <% end %>
     </div>
@@ -47,7 +47,7 @@
     <div>
       <%= f.fields_for :overflows do |overflow_form| %>
         <div class="rows-container">
-          <%= render 'overflow_fields', f: overflows %>
+          <%= render 'overflow_fields', f: overflow_form %>
         </div>
       <% end %>
     </div>
@@ -64,7 +64,7 @@
     <div>
       <%= f.fields_for :pumps do |pump_form| %>
         <div class="rows-container">
-          <%= render 'pump_fields', f: pumps %>
+          <%= render 'pump_fields', f: pump_form %>
         </div>
       <% end %>
     </div>
@@ -81,7 +81,7 @@
     <div>
       <%= f.fields_for :tanks do |tank_form| %>
         <div class="rows-container">
-          <%= render 'tank_fields', f: tanks %>
+          <%= render 'tank_fields', f: tank_form %>
         </div>
       <% end %>
     </div>

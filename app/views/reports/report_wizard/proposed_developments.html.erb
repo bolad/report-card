@@ -13,14 +13,14 @@
     <div>
       <%= f.fields_for :flows do |flow_form| %>
         <div class="rows-container">
-          <%= render 'flow_fields', f: flows %>
+          <%= render 'flow_fields', f: flow_form %>
         </div>
       <% end %>
     </div>
     <div>
       <%= f.fields_for :connections do |connection_form| %>
         <div class="rows-container">
-          <%= render 'connection_fields', f: connections %>
+          <%= render 'connection_fields', f: connection_form %>
         </div>
       <% end %>
     </div>

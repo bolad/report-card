@@ -247,3 +247,7 @@ table tbody tr:nth-child(odd) {
   text-transform: uppercase;
   letter-spacing: .5rem;
 }
+
+td span p {
+  font-family: inherit;
+}

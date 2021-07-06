@@ -37,6 +37,8 @@ class Reports::ReportWizardController < ApplicationController
       @report.update(report_params)
     when :data_assessment
       @report.update(report_params)
+    when :conclusion
+      @report.update(report_params)
     end
     redirect_to request.referrer
     #render_wizard @report
@@ -63,7 +65,8 @@ class Reports::ReportWizardController < ApplicationController
   def report_params
     params.require(:report).permit(:project_name, :project_number, :document_title, :document_number, :document_status, :date, :revision, :approved_by,
                                   :client_name, :client_number, :project_manager, :author, :checked_by, :description, :executive_summary, :background_intro,
-                                  :project_background, :project_objective, :proposed_developments, :catchment_details, :data_assessment, :conclusion, 
+                                  :project_background, :project_objective, :proposed_developments, :catchment_details, :data_assessment, :conclusion, :flooding_locations,
+                                  :cellared_property, :pumping_station, :catchment_overflow, :catchment_tank,
                                   executive_attributes: [:id, :project_name, :project_number, :potential_impact, :date], 
                                   background_attributes: [:id, :site_name, :location, :property_count, :site_type],
                                   flows_attributes: [:id, :flow_modelled, :include, :comments],

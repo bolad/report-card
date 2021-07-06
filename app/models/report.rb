@@ -60,4 +60,9 @@ class Report < ApplicationRecord
   has_rich_text :catchment_details
   has_rich_text :data_assessment
   has_rich_text :conclusion
+  has_rich_text :catchment_tank
+  has_rich_text :cellared_property
+  has_rich_text :catchment_overflow
+  has_rich_text :pumping_station
+  has_rich_text :flooding_locations
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_05_200240) do
+ActiveRecord::Schema.define(version: 2021_07_06_211230) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -132,7 +132,7 @@ ActiveRecord::Schema.define(version: 2021_07_05_200240) do
 
   create_table "flows", force: :cascade do |t|
     t.string "flow_modelled"
-    t.string "include"
+    t.string "includes"
     t.string "comments"
     t.bigint "report_id", null: false
     t.datetime "created_at", precision: 6, null: false

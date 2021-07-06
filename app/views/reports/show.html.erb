@@ -215,7 +215,7 @@
       <%= @report.background_intro %>
     </p>
     </br>
-    <span class="table-name">Table 1.1 – Development Location</span>
+    <span class="table-name">Development Location</span>
     <div class="project-table">
       <table>
         <thead>
@@ -243,7 +243,78 @@
   <section class="project-objective" id="project-objective">
     <div class="report-container">
       <h5 class="section-head-large">Project Objective</h5></br>
-      <p class="summary"><%= @report.project_objective %></p>
+      <span class="summary"><%= @report.project_objective %></span>
+    </div>
+  </section>
+
+  <section class="project-development" id="project-development">
+    <div class="report-container">
+      <h5 class="section-head-large">Proposed New Developments</h5></br>
+      <span class="summary"><%= @report.proposed_developments%></span>
+      </br>
+      <span class="table-name">Development Flows</span>
+      <div class="project-table">
+        <table>
+          <thead>
+            <tr>
+              <td style="text-align: left; width: 30%;">Flows to be modelled</td>
+              <td>Yes/No</td>
+              <td style="text-align:center;">Comments</td>
+            </tr>
+          </thead>
+          <tbody>
+            <% @report.flows.each do |flow| %>
+              <tr>
+                <td><%= flow.flow_modelled %></td>
+                <td><%= flow.includes %></td>
+                <td><%= flow.comments %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div></br>
+
+      <span class="table-name">Table 3.2 – Proposed Connection Information</span>
+      <div class="project-table">
+        <table>
+          <thead>
+            <tr>
+              <td>Development</td>
+              <td colspan="2" style="text-align:center;">Peak Modelled Discharge</td>
+              <td colspan="6" style="text-align:center;">Proposed point of connection</td>
+              <td>Pumped/Gravity</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td></td>
+              <td style="font-weight: bold; font-size: 13px;">DWF (l/s)</td>
+              <td style="font-weight: bold; font-size: 13px;">30-Year (l/s)</td>
+              <td style="font-weight: bold; font-size: 13px;">Node Ref.</td>
+              <td style="font-weight: bold; font-size: 13px;">Freeboard (m)</td>
+              <td style="font-weight: bold; font-size: 13px; text-align: left;">Receiving Sewer Dia. (mm)</td>
+              <td style="font-weight: bold; font-size: 13px;">PFC (l/s)</td>
+              <td style="font-weight: bold; font-size: 13px;">Pipe RPA</td>
+              <td style="font-weight: bold; font-size: 13px;">M30 Peak Flow (l/s)</td>
+              <td></td>
+            </tr>
+            <% @report.connections.each do |connection| %>
+              <tr>
+                <td><%= connection.development %></td>
+                <td><%= connection.dwf %></td>
+                <td><%= connection.thirty_year %></td>
+                <td><%= connection.node_ref %></td>
+                <td><%= connection.freeboard %></td>
+                <td><%= connection.receiving_sewer %></td>
+                <td><%= connection.pfc %></td>
+                <td><%= connection.pipe %></td>
+                <td><%= connection.peak_flow %></td>
+                <td><%= connection.pumped %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div></br>
     </div>
   </section>
 
