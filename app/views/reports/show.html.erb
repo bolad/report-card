@@ -360,7 +360,7 @@
       </div></br></br>
 
       <h5 class="section-head-small" id="cellared-properties">Cellared Properties</h5>
-      <span class="summary"><%= @report.cellared_property %></span></br></br>
+      <span class="summary"><%= @report.cellared_property %></span></br>
       <span class="table-name">Summary of Cellared Properties</span>
       <div class="project-table">
         <table>
@@ -394,7 +394,7 @@
         </table>
       </div></br></br>
       <h5 class="section-head-small" id="catchment-overflows">Catchment Overflows</h5>
-      <span class="summary"><%= @report.catchment_overflow %></span></br></br>
+      <span class="summary"><%= @report.catchment_overflow %></span></br>
       <span class="table-name">Summary of CSO Locations</span>
       <div class="project-table">
         <table>
@@ -456,10 +456,8 @@
         </table>
       </div></br></br>
       <h5 class="section-head-small" id="pumping-stations">Pumping Stations</h5>
-      <span class="summary">
-        There are no cellared properties identified in the vicinity and downstream of the new development site.          
-      </span></br></br>
-      <span class="table-name">Table 4.4 – Summary of Catchment Pumping Stations</span>
+      <span class="summary"><%= @report.pumping_station %></span></br>
+      <span class="table-name">Summary of Catchment Pumping Stations</span>
       <div class="project-table">
         <table>
           <thead>
@@ -475,24 +473,24 @@
           </thead>
           
           <tbody>
+          <% @report.pumps.each do |pump| %>
             <tr>
-              <td>49092-NP1</td>
-              <td>New Lane</td>
-              <td>No permit</td>
-              <td>6.5</td>
-              <td>32</td>
-              <td>143</td>
-              <td>123 New Lane WW NTWK PS</td>
+              <td><%= pump.station_ref %></td>
+              <td><%= pump.name %></td>
+              <td><%= pump.overflow_ref %></td>
+              <td><%= pump.permitted_rate %></td>
+              <td><%= pump.modelled_rate %></td>
+              <td><%= pump.run_time %></td>
+              <td><%= pump.comments %></td>
             </tr>
+          <% end %>
           </tbody>
         </table>
       </div></br></br>
       <h5 class="section-head-small" id="catchment-tanks">Catchment Tanks</h5>
-      <p class="summary">
-        There is a tank located downstream of the development site along the flow conveyance path.          
-      </p>
+      <span class="summary"><%= @report.catchment_tank %></span>
       </br>
-      <span class="table-name">Table 4.5 – Summary of Catchment Tanks</span>
+      <span class="table-name">Summary of Catchment Tanks</span>
       <div class="project-table">
         <table>
           <thead>
@@ -509,19 +507,167 @@
           </thead>
           
           <tbody>
+          <% @report.tanks.each do |tank| %>
             <tr>
-              <td>46013</td>
-              <td>New Church Road</td>
-              <td>ROS0082SO</td>
-              <td>Offline</td>
-              <td>Null</td>
-              <td>12433.5</td>
-              <td>454353.12</td>
-              <td></td>
+              <td><%= tank.tank_ref %></td>
+              <td><%= tank.name %></td>
+              <td><%= tank.overflow_ref %></td>
+              <td><%= tank.online %></td>
+              <td><%= tank.permitted_storage %></td>
+              <td><%= tank.effective_storage %></td>
+              <td><%= tank.annual_volume %></td>
+              <td><%= tank.comments %></td>
+            </tr>
+          <% end %>
+          </tbody>
+        </table>
+      </div></br></br>
+    </div>
+  </section>
+
+  <section class="data-assessment">
+      <div class="report-container">
+        <h5 class="section-head-large">Data Assessment</h5></br>
+        <span class="summary"><%= @report.data_assessment %></span>
+      <span class="table-name">Summary of Data Gathered</span>
+      <div class="project-table">
+        <table>
+          <thead>
+            <tr>
+              <td>Data Required </td>
+              <td style="text-align: center;">Provided (Y/N)</td>
+              <td style="text-align: center;">File Name</td>
+            </tr>
+          </thead>
+          <tbody>
+          <% @report.data_sources.each do |data_source| %>
+            <tr>
+              <td><%= data_source.data_required %></td>
+              <td style="text-align: center;"><%= data_source.provided %></td>
+              <td style="text-align: left;"><%= data_source.file_name %></td>
+            </tr>
+          <% end %>
+          </tbody>
+        </table>
+      </div></br></br>
+      <h5 class="section-head-small" id="model-database">Model Database</h5>
+      <span class="table-name">Table 5.2 – Model Fit For Purpose (FFP) Review</span>
+      <div class="project-table">
+        <table>
+          <thead>
+            <tr>
+              <td style="text-align: center;">Category</td>
+              <td style="text-align: center; width: 10%;">Check No.</td>
+              <td style="text-align: center; width: 20%;">Description</td>
+              <td style="text-align: center;">Comments</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td rowspan="6" style="transform: rotate(-90deg); width: 12%;text-align: center;">Model Detail</td>
+              <td style="text-align: center;">1</td>
+              <td style="text-align: center;">Model Type (I, II, III)</td>
+              <td>The model type within the vicinity of the proposed development is Type II.</td>
+            </tr>
+            <tr>
+              <td style="text-align: center;">2</td>
+              <td style="text-align: center;">Sub catchment Review</td>
+              <td>Model sub-catchments digitized, conform with UDG Code of Practice Section 4.2.1</td>
+            </tr>
+            <tr>
+              <td style="text-align: center;">3</td>
+              <td style="text-align: center;">Contributing Areas</td>
+              <td>Contributing areas have been applied appropriately across the catchment and area take off assumptions appear correct.</td>
+            </tr>
+            <tr>
+              <td style="text-align: center;">4</td>
+              <td style="text-align: center;">Flooding Representation</td>
+              <td>Flooding types and flooding areas set in the model are considered appropriate. Floodable area values have been defined in accordance with UU Modelling Specification NM04 v4.</td>
+            </tr>
+            <tr>
+              <td style="text-align: center;">5</td>
+              <td style="text-align: center;">Soil Type</td>
+              <td>Soil type 4 has been applied correctly across the catchments.</td>
+            </tr>
+            <tr>
+              <td style="text-align: center;">6</td>
+              <td style="text-align: center;">Runoff Model</td>
+              <td>Wallingford / Fixed runoff model have been applied across the catchment.</td>
+            </tr>
+            <tr>
+              <td rowspan="4" style="transform: rotate(-90deg); width: 12%;text-align: center;">Representation of Ancillaries</td>
+              <td style="text-align: center;">7a</td>
+              <td style="text-align: center;">Sewer Ancillaries – WwTW</td>
+              <td>Burscough WwTW is located downstream of the proposed development. The model representation of the WwTW is adequately detailed.</td>
+            </tr>
+            <tr>
+              <td style="text-align: center;">7b</td>
+              <td style="text-align: center;">Sewer Ancillaries – CSO’s</td>
+              <td>No CSO’s have been identified downstream of the new development site along the flow conveyance path.</td>
+            </tr>
+            <tr>
+              <td style="text-align: center;">7c</td>
+              <td style="text-align: center;">Sewer Ancillaries - Tanks</td>
+              <td>No tank is located downstream of the new development site along the flow conveyance path.</td>
+            </tr>
+            <tr>
+              <td style="text-align: center;">7d</td>
+              <td style="text-align: center;">Sewer Ancillaries – Pumping Stations</td>
+              <td>New Lane PS (ref. 49092) has been identified downstream of the new development site’s flow conveyance path.</td>
+            </tr>
+            <tr>
+              <td height="120" style="transform: rotate(-90deg); width: 12%;text-align: center;">Rainfall Data</td>
+              <td style="text-align: center;">8</td>
+              <td style="text-align: center;">FEH Rainfall Data</td>
+              <td>FEH Design Rainfall Data is provided and is adequate for the assessment.</td>
+            </tr>
+            <tr>
+              <td rowspan="2" style="transform: rotate(-90deg); width: 12%;text-align: center;">Model Suitability</td>
+              <td style="text-align: center;">9a</td>
+              <td style="text-align: justify;">Is model update required prior to undertaking a full DIA assessment?</td>
+              <td>No</td>
+            </tr>
+            <tr>
+              <td style="text-align: center;">9b</td>
+              <td style="text-align: justify;">Is the current model deemed suitable to undertake a full DIA?</td>
+              <td>Yes</td>
+            </tr>
+          </tbody>
+        </table>
+      </div></br></br>
+      <h5 class="section-head-small" id="data-summary">Data Summary</h5>
+      <span class="table-name">Table 5.3 Summary of Conclusions</span>
+      <div class="project-table">
+        <table>
+          <tbody>
+            <tr>
+              <td>Is sufficient information available to complete the Triage evaluation?</td>
+              <td>Yes</td>
+            </tr>
+            <tr>
+              <td>Is flooding in the catchment likely to be increased by the new development?</td>
+              <td>Potentially</td>
+            </tr>
+            <tr>
+              <td>Is the proposed development likely to have a detrimental impact on any overflows within the catchment?</td>
+              <td>No</td>
+            </tr>
+            <tr>
+              <td>Is there a risk of new flooding imposed by the new development?</td>
+              <td>No</td>
+            </tr>
+            <tr>
+              <td>Is there a risk of overland flooding affecting the development location?</td>
+              <td>No</td>
+            </tr>
+            <tr>
+              <td>Is the available information sufficient to complete a full modelling assessment?</td>
+              <td>Yes</td>
             </tr>
           </tbody>
         </table>
       </div></br></br>
     </div>
   </section>
+  
 </main>
