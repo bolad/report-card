@@ -318,4 +318,210 @@
     </div>
   </section>
 
+  <section class="catchment-details" id="catchment-details">
+    <div class="report-container">
+      <h5 class="section-head-large">Catchment Details</h5></br>
+      <h5 class="section-head-small" id="flood-location">Flooding Locations and Incidents</h5>
+
+      <span class="summary"><%= @report.flooding_locations %></span></br>
+      <span class="table-name">Summary of Flooding and WIRS Incidents Flows</span>
+      <div class="project-table">
+        <table class="table4">
+          <thead>
+            <tr>
+              <td>Location</td>
+              <td>Postcode</td>
+              <td>NGR</td>
+              <td>HFRR Property<br/>(Y/N)</td>
+              <td>Historical Flooding Property<br/>(Y/N)</td>
+              <td>WIRS/INS Incidents<br/>(total no.)</td>
+              <td>Nearest Model Node</td>
+              <td>Modelled Risk RP</td>
+              <td>Comments</td>
+            </tr>
+          </thead>
+          
+          <tbody>
+          <% @report.incidents.each do |incident| %>
+            <tr>
+              <td style="text-align: left; width: 15%;"><%= incident.location %></td>
+              <td><%= incident.postcode %></td>
+              <td><%= incident.ngr %></td>
+              <td style="text-align: center; width: 5%;"><%= incident.hfrr %></td>
+              <td style="text-align: center; width: 5%;"><%= incident.historical_flooding %></td>
+              <td style="text-align: center; width: 5%;"><%= incident.wirs %></td>
+              <td><%= incident.nearest_node %></td>
+              <td><%= incident.modelled_risk %></td>
+              <td style="text-align: left;"><%= incident.comments %></td>
+            </tr>
+          <% end %>
+          </tbody>
+        </table>
+      </div></br></br>
+
+      <h5 class="section-head-small" id="cellared-properties">Cellared Properties</h5>
+      <span class="summary"><%= @report.cellared_property %></span></br></br>
+      <span class="table-name">Summary of Cellared Properties</span>
+      <div class="project-table">
+        <table>
+          <thead>
+            <tr>
+              <td>Location</td>
+              <td>Postcode</td>
+              <td>NGR</td>
+              <td>Registred in </br>Flooding Register</td>
+              <td>Registred in </br>WIRS Incidents</td>
+              <td>Nearest Model </br>Node</td>
+              <td>M30 Freeboard </br>at Nearest Node (m)</td>
+              <td>Comments</td>
+            </tr>
+          </thead>
+          
+          <tbody>
+          <% @report.cellars.each do |cellar| %>
+            <tr>
+              <td><%= cellar.location %></td>
+              <td><%= cellar.postcode %></td>
+              <td><%= cellar.ngr %></td>
+              <td><%= cellar.flooding_register %></td>
+              <td><%= cellar.wirs_register %></td>
+              <td><%= cellar.nearest_node %></td>
+              <td><%= cellar.freeboard %></td>
+              <td><%= cellar.comments %></td>
+            </tr>
+          <% end %>
+          </tbody>
+        </table>
+      </div></br></br>
+      <h5 class="section-head-small" id="catchment-overflows">Catchment Overflows</h5>
+      <span class="summary"><%= @report.catchment_overflow %></span></br></br>
+      <span class="table-name">Summary of CSO Locations</span>
+      <div class="project-table">
+        <table>
+          <thead>
+            <tr>
+              <td>CSO Spill Analysis</td>
+              <td colspan="2" style="text-align:center;">PFF at first spill (l/s)</td>
+              <td colspan="4" style="text-align:center;">EDM Reports</td>
+              <td colspan="6" style="text-align:center;">Model Performance</td>
+              <td>Comments</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td colspan="2" style="text-align:center; font-weight: bold; font-size: 13px;">Annual</td>
+              <td colspan="2" style="text-align:center; font-weight: bold; font-size: 13px;">Bathing Season</td>
+              <td colspan="3" style="text-align:center; font-weight: bold; font-size: 13px;">Annual</td>
+              <td colspan="3" style="text-align:center; font-weight: bold; font-size: 13px;">Bathing Season</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>CSO Name</br>(CSO Ref)</td>
+              <td>Permit</td>
+              <td>Model</td>
+              <td>Spill Frequency</td>
+              <td>Spill Duration (hrs)</td>
+              <td>Spill Frequency</td>
+              <td>Spill Duration (hrs)</td>
+              <td>Spill Frequency</td>
+              <td>Spill Duration (hrs)</td>
+              <td>Spill Volume (m3)</td>
+              <td>Spill Frequency</td>
+              <td>Spill Duration (hrs)</td>
+              <td>Spill Volume (m3)</td>
+              <td></td>
+            </tr>
+            <% @report.overflows.each do |overflow| %>
+              <tr>
+                <td><%= overflow.cso_name %></td>
+                <td><%= overflow.permit %></td>
+                <td><%= overflow.model %></td>
+                <td><%= overflow.edm_annual_spill_freq %></td>
+                <td><%= overflow.edm_annual_spill_duration %></td>
+                <td><%= overflow.edm_bathing_spill_freq %></td>
+                <td><%= overflow.edm_bathing_spill_duration %></td>
+                <td><%= overflow.model_annual_spill_freq %></td>
+                <td><%= overflow.model_annual_spill_duration %></td>
+                <td><%= overflow.model_annual_spill_volume %></td>
+                <td><%= overflow.model_bathing_spill_freq %></td>
+                <td><%= overflow.model_bathing_spill_duration %></td>
+                <td><%= overflow.model_bathing_spill_volume %></td>
+                <td><%= overflow.comments %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div></br></br>
+      <h5 class="section-head-small" id="pumping-stations">Pumping Stations</h5>
+      <span class="summary">
+        There are no cellared properties identified in the vicinity and downstream of the new development site.          
+      </span></br></br>
+      <span class="table-name">Table 4.4 – Summary of Catchment Pumping Stations</span>
+      <div class="project-table">
+        <table>
+          <thead>
+            <tr>
+              <td>Pumping Station Ref. </td>
+              <td style="width: 15%; text-align: center;">Name</td>
+              <td>Linked Overflow Ref.</td>
+              <td style="width: 15%; text-align: center;">Permitted </br>Pump Rate (l/s)</td>
+              <td style="width: 15%; text-align: center;">Total Modelled </br>Pump Rate (l/s)</td>
+              <td style="width: 15%; text-align: center;"> Annual Pump </br>Run Time (hr)</td>
+              <td>Comments</td>
+            </tr>
+          </thead>
+          
+          <tbody>
+            <tr>
+              <td>49092-NP1</td>
+              <td>New Lane</td>
+              <td>No permit</td>
+              <td>6.5</td>
+              <td>32</td>
+              <td>143</td>
+              <td>123 New Lane WW NTWK PS</td>
+            </tr>
+          </tbody>
+        </table>
+      </div></br></br>
+      <h5 class="section-head-small" id="catchment-tanks">Catchment Tanks</h5>
+      <p class="summary">
+        There is a tank located downstream of the development site along the flow conveyance path.          
+      </p>
+      </br>
+      <span class="table-name">Table 4.5 – Summary of Catchment Tanks</span>
+      <div class="project-table">
+        <table>
+          <thead>
+            <tr>
+              <td>Tank Ref. </td>
+              <td style="width: 15%; text-align: center;">Name</td>
+              <td>Linked Overflow Ref.</td>
+              <td style="width: 15%; text-align: center;">Online/Offline</td>
+              <td style="width: 15%; text-align: center;">Permitted Storage </br>Volume (m3)</td>
+              <td style="width: 15%; text-align: center;"> Effective Storage </br>Volume (m3)</td>
+              <td style="width: 15%; text-align: center;"> Annual Volume</br> To Tank (m3)</td>
+              <td>Comments</td>
+            </tr>
+          </thead>
+          
+          <tbody>
+            <tr>
+              <td>46013</td>
+              <td>New Church Road</td>
+              <td>ROS0082SO</td>
+              <td>Offline</td>
+              <td>Null</td>
+              <td>12433.5</td>
+              <td>454353.12</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div></br></br>
+    </div>
+  </section>
 </main>
