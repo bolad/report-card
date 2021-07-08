@@ -567,106 +567,113 @@
               <td rowspan="6" style="transform: rotate(-90deg); width: 12%;text-align: center;">Model Detail</td>
               <td style="text-align: center;">1</td>
               <td style="text-align: center;">Model Type (I, II, III)</td>
-              <td>The model type within the vicinity of the proposed development is Type II.</td>
+              <td><%= @report.model_database.model_type %></td>
             </tr>
             <tr>
               <td style="text-align: center;">2</td>
               <td style="text-align: center;">Sub catchment Review</td>
-              <td>Model sub-catchments digitized, conform with UDG Code of Practice Section 4.2.1</td>
+              <td><%= @report.model_database.subcatchment_review %></td>
             </tr>
             <tr>
               <td style="text-align: center;">3</td>
               <td style="text-align: center;">Contributing Areas</td>
-              <td>Contributing areas have been applied appropriately across the catchment and area take off assumptions appear correct.</td>
+              <td><%= @report.model_database.contributing_areas %></td>
             </tr>
             <tr>
               <td style="text-align: center;">4</td>
               <td style="text-align: center;">Flooding Representation</td>
-              <td>Flooding types and flooding areas set in the model are considered appropriate. Floodable area values have been defined in accordance with UU Modelling Specification NM04 v4.</td>
+              <td><%= @report.model_database.flooding_representation %></td>
             </tr>
             <tr>
               <td style="text-align: center;">5</td>
               <td style="text-align: center;">Soil Type</td>
-              <td>Soil type 4 has been applied correctly across the catchments.</td>
+              <td><%= @report.model_database.soil_type %></td>
             </tr>
             <tr>
               <td style="text-align: center;">6</td>
               <td style="text-align: center;">Runoff Model</td>
-              <td>Wallingford / Fixed runoff model have been applied across the catchment.</td>
+              <td><%= @report.model_database.runoff_model %></td>
             </tr>
             <tr>
               <td rowspan="4" style="transform: rotate(-90deg); width: 12%;text-align: center;">Representation of Ancillaries</td>
               <td style="text-align: center;">7a</td>
               <td style="text-align: center;">Sewer Ancillaries – WwTW</td>
-              <td>Burscough WwTW is located downstream of the proposed development. The model representation of the WwTW is adequately detailed.</td>
+              <td><%= @report.model_database.ancillaries_wwtw %></td>
             </tr>
             <tr>
               <td style="text-align: center;">7b</td>
               <td style="text-align: center;">Sewer Ancillaries – CSO’s</td>
-              <td>No CSO’s have been identified downstream of the new development site along the flow conveyance path.</td>
+              <td><%= @report.model_database.ancillaries_cso %></td>
             </tr>
             <tr>
               <td style="text-align: center;">7c</td>
               <td style="text-align: center;">Sewer Ancillaries - Tanks</td>
-              <td>No tank is located downstream of the new development site along the flow conveyance path.</td>
+              <td><%= @report.model_database.ancillaries_tanks %></td>
             </tr>
             <tr>
               <td style="text-align: center;">7d</td>
               <td style="text-align: center;">Sewer Ancillaries – Pumping Stations</td>
-              <td>New Lane PS (ref. 49092) has been identified downstream of the new development site’s flow conveyance path.</td>
+              <td><%= @report.model_database.ancillaries_pumps %></td>
             </tr>
             <tr>
               <td height="120" style="transform: rotate(-90deg); width: 12%;text-align: center;">Rainfall Data</td>
               <td style="text-align: center;">8</td>
               <td style="text-align: center;">FEH Rainfall Data</td>
-              <td>FEH Design Rainfall Data is provided and is adequate for the assessment.</td>
+              <td><%= @report.model_database.rainfall_data %></td>
             </tr>
             <tr>
               <td rowspan="2" style="transform: rotate(-90deg); width: 12%;text-align: center;">Model Suitability</td>
               <td style="text-align: center;">9a</td>
               <td style="text-align: justify;">Is model update required prior to undertaking a full DIA assessment?</td>
-              <td>No</td>
+              <td><%= @report.model_database.model_update %></td>
             </tr>
             <tr>
               <td style="text-align: center;">9b</td>
               <td style="text-align: justify;">Is the current model deemed suitable to undertake a full DIA?</td>
-              <td>Yes</td>
+              <td><%= @report.model_database.model_suitable %></td>
             </tr>
           </tbody>
         </table>
       </div></br></br>
       <h5 class="section-head-small" id="data-summary">Data Summary</h5>
-      <span class="table-name">Table 5.3 Summary of Conclusions</span>
+      <span class="table-name">Summary of Conclusions</span>
       <div class="project-table">
         <table>
           <tbody>
             <tr>
               <td>Is sufficient information available to complete the Triage evaluation?</td>
-              <td>Yes</td>
+              <td><%= @report.data_summary.summary_1 %></td>
             </tr>
             <tr>
               <td>Is flooding in the catchment likely to be increased by the new development?</td>
-              <td>Potentially</td>
+              <td><%= @report.data_summary.summary_2 %></td>
             </tr>
             <tr>
               <td>Is the proposed development likely to have a detrimental impact on any overflows within the catchment?</td>
-              <td>No</td>
+              <td><%= @report.data_summary.summary_3 %></td>
             </tr>
             <tr>
               <td>Is there a risk of new flooding imposed by the new development?</td>
-              <td>No</td>
+              <td><%= @report.data_summary.summary_4 %></td>
             </tr>
             <tr>
               <td>Is there a risk of overland flooding affecting the development location?</td>
-              <td>No</td>
+              <td><%= @report.data_summary.summary_5 %></td>
             </tr>
             <tr>
               <td>Is the available information sufficient to complete a full modelling assessment?</td>
-              <td>Yes</td>
+              <td><%= @report.data_summary.summary_6 %></td>
             </tr>
           </tbody>
         </table>
       </div></br></br>
+    </div>
+  </section>
+
+  <section class="conclusion" id="conclusion">
+    <div class="report-container">
+      <h5 class="section-head-large">Conclusion</h5></br>
+      <p class="summary"><%= @report.conclusion %></p>
     </div>
   </section>
   

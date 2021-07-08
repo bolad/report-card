@@ -9,6 +9,21 @@
       <%= f.rich_text_area :data_assessment, class: "form-control text-area" %>
     </div></br>
 
+    <h3 class="head-md-dark">Summary of Data Gathered</h3></br>
+    <div>
+      <%= f.fields_for :data_sources do |source_form| %>
+        <div class="rows-container">
+          <%= render 'data_source_fields', f: source_form %>
+        </div>
+      <% end %>
+    </div>
+    
+    <div class="row-buttons">
+      <div>
+        <%= link_to_add_association 'Add Row to Data Gathered Table', f, :data_sources, class: "btn-reserved", style: "background-color: #262626; border: none; color: #fff; float: right;" %>
+      </div>
+    <div></br></br>
+
     <h3 class="head-md-dark">Model Fit For Purpose (FFP) Review</h3></br>
     <div>
       <%= f.fields_for :model_database_attributes, @report.model_database do |database_form| %>
@@ -26,22 +41,10 @@
         </div>
       <% end %>
     </div></br>
-
-    <h3 class="head-md-dark">Summary of Data Gathered</h3>
-    <div>
-      <%= f.fields_for :data_sources do |source_form| %>
-        <div class="rows-container">
-          <%= render 'data_source_fields', f: source_form %>
-        </div>
-      <% end %>
-    </div>
     
     <div class="row-buttons">
       <div>
-        <%= link_to_add_association 'Add Row to Data Gathered Table', f, :data_sources, class: "btn-reserved", style: "background-color: #262626; border: none; color: #fff; float: right;" %>
-        <div>
-          <%= f.submit "Save Changes" , class: "btn-reserved", style: "background-color: #262626; border: none; color: #fff; float: left;"%>
-        </div>
+        <%= f.submit "Save Changes" , class: "btn-reserved", style: "background-color: #262626; border: none; color: #fff; float: left;"%>
       </div>
     <div>
   <% end %>
