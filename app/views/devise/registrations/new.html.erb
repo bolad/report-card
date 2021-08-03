@@ -1,10 +1,11 @@
-<div class="mx-auto col-md-6 card-box">
-    <div class="card">
-        <div class="card-header mx-auto">
+<div class="container">
+  <div class="mx-auto col-md-6 card-box">
+      <div class="card">
+          <div class="card-header mx-auto">
             <strong>Please sign up for a new account</strong>
-        </div>
+          </div>
 
-        <div class="card-body">
+          <div class="card-body">
             <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
               <%= render 'devise/shared/messages' %>
               <div class="form-item form-group">
@@ -31,6 +32,7 @@
             <% end %>
 
             <%= render "devise/shared/links" %>
-        </div>
+          </div>
+      </div>
     </div>
 </div>

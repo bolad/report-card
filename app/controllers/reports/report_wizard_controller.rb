@@ -69,7 +69,7 @@ class Reports::ReportWizardController < ApplicationController
                                   :cellared_property, :pumping_station, :catchment_overflow, :catchment_tank,
                                   executive_attributes: [:id, :project_name, :project_number, :potential_impact, :date], 
                                   background_attributes: [:id, :site_name, :location, :property_count, :site_type],
-                                  flows_attributes: [:id, :flow_modelled, :include, :comments],
+                                  flows_attributes: [:id, :flow_modelled, :includes, :comments],
                                   connections_attributes: [:id, :development, :dwf, :thirty_year, :node_ref, :freeboard, :receiving_sewer, :pfc, :pipe, :peak_flow, :pumped],
                                   incidents_attributes: [:id, :location, :postcode, :ngr, :hfrr, :historical_flooding, :wirs, :nearest_node, :modelled_risk, :comments],
                                   cellars_attributes: [:id, :location, :postcode, :ngr, :flooding_register, :wirs_register, :freeboard, :nearest_node, :comments],
