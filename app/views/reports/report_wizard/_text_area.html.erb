@@ -3,8 +3,10 @@
     <%= yield f %>
   </div>
   <div style="padding-top: 2rem;">
-    <div class="btn btn-inverse">
-      <%= f.submit "Save Changes" , style: "background-color: #262626; border: none; color: #fff; float: right;"%>
-    </div>
+    <div class="row-buttons">
+      <div>
+        <%= f.submit "Save Changes" , class: "btn-reserved", style: "background-color: #262626; border: none; color: #fff; float: left;"%>
+      </div>
+    <div>
   </div>
 <% end %>

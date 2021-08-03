@@ -17,6 +17,13 @@
         </div>
       <% end %>
     </div>
+    
+    <div class="row-buttons">
+      <div>
+        <%= link_to_add_association 'Add Row To Flows Table', f, :flows, class: "btn-reserved", style: "background-color: #262626; border: none; color: #fff; float: right;" %>
+      </div>
+    <div></br></br></br>
+    
     <div>
       <%= f.fields_for :connections do |connection_form| %>
         <div class="rows-container">
@@ -24,12 +31,6 @@
         </div>
       <% end %>
     </div>
-    
-    <div class="row-buttons">
-      <div>
-        <%= link_to_add_association 'Add Row To Flows Table', f, :flows, class: "btn-reserved", style: "background-color: #262626; border: none; color: #fff; float: right;" %>
-      </div>
-    <div></br></br>
 
     <div class="row-buttons">
       <div>
@@ -38,7 +39,7 @@
           <%= f.submit "Save Changes" , class: "btn-reserved", style: "background-color: #262626; border: none; color: #fff; float: left;"%>
         </div>
       </div>
-    <div>
+    </div>
 
   <% end %>
 

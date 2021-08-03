@@ -30,7 +30,7 @@
     <div>
       <%= f.fields_for :cellars do |cellar_form| %>
         <div class="rows-container">
-          <%= render 'incident_fields', f: cellar_form %>
+          <%= render 'cellar_fields', f: cellar_form %>
         </div>
       <% end %>
     </div>
