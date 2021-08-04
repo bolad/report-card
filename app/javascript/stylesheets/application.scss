@@ -29,6 +29,10 @@ img {
   max-width: 100%;
 }
 
+.logo {
+  width: 12%;
+}
+
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
@@ -75,7 +79,7 @@ html {
   position: relative;
 }
 
-.actions {
+.report-actions {
   display: flex;
   align-content: space-between;
   padding-left: 5rem;
