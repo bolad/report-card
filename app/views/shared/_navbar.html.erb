@@ -38,7 +38,13 @@
 <main>
   <nav class="navbar navbar-fixed-top navbar-dark bg-dark">
     <div class="container-fluid">
-      <%= image_tag("jacobs-preview.png", class: "logo", id: "navbar-logo") %>
+      <div class="home-btn"
+        <%= link_to root_path, class: "home-icon-header" do %>
+          <i class="fas fa-home home-icon"></i>
+        <% end %>
+      
+        <%= image_tag("jacobs-preview.png", class: "header-logo", id: "navbar-logo") %>
+      </div>
       <button class="hamburger navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>

@@ -251,3 +251,14 @@ table tbody tr:nth-child(odd) {
 td span p {
   font-family: inherit;
 }
+
+.home-icon {
+  font-size: 3rem;
+  color: #fff;
+
+  &:hover {
+    color: var(--light-gray-color) !important;
+    text-decoration: none;
+    background-color: var(--dark-color);
+  }
+}

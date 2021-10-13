@@ -30,7 +30,16 @@ img {
 }
 
 .logo {
-  width: 12%;
+  width: 25%;
+}
+
+.header-logo {
+  width: 45%;
+  padding-bottom: 1rem;
+}
+
+.home-icon-header {
+  cursor: pointer;
 }
 
 html {
@@ -155,4 +164,8 @@ html {
 
 .user-list {
   padding-bottom: 5rem;
+}
+
+.home-btn {
+  padding-left: 2rem;
 }
