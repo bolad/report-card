@@ -155,14 +155,16 @@ section:not(.hero) {
   position: relative;
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 
 .hero-image {
-  max-width: 90%;
+  max-width: 95%;
   user-select: none;
   -webkit-user-drag: none;
   margin-top: auto;
   position: relative;
+  align-items: center;
 }
 
 .report-container {
@@ -260,5 +262,6 @@ td span p {
     color: var(--light-gray-color) !important;
     text-decoration: none;
     background-color: var(--dark-color);
+    cursor: pointer;
   }
 }
